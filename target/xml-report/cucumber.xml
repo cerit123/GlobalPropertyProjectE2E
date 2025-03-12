@@ -1,4 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="Cucumber" time="375.164" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-03-12T19:00:25.901828400Z">
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.1" time="74.169">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "HOUSE" seçilir.......................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.2" time="52.342">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "APARTMENT" seçilir...................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.3" time="66.502">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "OFFICE" seçilir......................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.4" time="71.772">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "VILLA" seçilir.......................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.5" time="59.329">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "LAND" seçilir........................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.6" time="50.573">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "SHOP" seçilir........................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+=======
 <testsuite name="Cucumber" time="39.871" tests="3" skipped="0" failures="2" errors="0" timestamp="2025-03-12T12:57:35.930004100Z">
 <testcase classname="US-16_Admin Creat Report test" name="Admin İlanların; start date, end date, category, advert type ve status bilgilerine göre rapor oluşturabilmeli" time="20.956">
 <failure type="java.lang.AssertionError">
@@ -34,6 +95,7 @@ And Rapor butonuna tiklanir.................................................pass
 And En Populer ilanlar kisminda miktar kismi secilir........................passed
 And Rapor olustur butonuna tiklanir.........................................passed
 Then Rapor basariyla olustugu gosterilir....................................passed
+>>>>>>> master
 ]]></system-out>
 </testcase>
 <testcase classname="US-16_AdminCreatReport test" name="Kullanici bilgilerine gore rapor olusturabilmelidir" time="15.056">
