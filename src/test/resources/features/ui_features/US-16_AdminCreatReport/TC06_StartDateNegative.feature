@@ -5,7 +5,7 @@ Feature: US-16_AdminCreatReport test
 
     Given Siteye gidilir
     When Admin olarak giris yapilir
-    And "Raporlar" sekmesine gidilir
+    And Raporlar sekmesine gidilir
     And Start date kismina  gecerli  bir veri girilir
     And End date kismina "Start date " kisminda once bir tarih girilir
     And Category kismi secilir

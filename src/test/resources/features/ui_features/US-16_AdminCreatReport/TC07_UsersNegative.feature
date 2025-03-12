@@ -5,7 +5,7 @@ Feature: US-16_AdminCreatReport test
     Given Siteye gidilir
     When Farkli bir kullanici ile giris yapilir
     And Profil kismina gidilir
-    And "Kontrol Paneli " sekmesine gidilir
+    And Kontrol Paneli  sekmesine gidilir
     Then "Kontrol Paneli " sekmesinin olmadigi gorulur
 
 
