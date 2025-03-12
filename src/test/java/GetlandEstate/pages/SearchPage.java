@@ -13,6 +13,9 @@ public class SearchPage {
     @FindBy(xpath="//button[text()='Rent']")
     public WebElement rentButton;
 
+    @FindBy(xpath="//button[text()='Sale']")
+    public WebElement saleButton;
+
     @FindBy(css="input[name='query']")
     public WebElement searchBox;
 
