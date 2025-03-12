@@ -37,10 +37,41 @@ public class SearchPage {
     @FindBy(xpath="//button[text()='SHOP']")
     public WebElement shopButton;
 
-  @FindBy(xpath="//span[text()='Total found : ']")
+    @FindBy(xpath="//input[@id='q']")
+    public WebElement searchBox2;
+
+ @FindBy(xpath="//input[@id='ps']")
+    public WebElement minPriceRange;
+
+@FindBy(xpath="//input[@id='pe']")
+    public WebElement maxPriceRange;
+
+
+
+ @FindBy(xpath="//select[@id='at']")
+    public WebElement advertTypeDropDown;
+
+@FindBy(xpath="//select[@id='c']")
+    public WebElement categoryDropDown;
+
+@FindBy(xpath="//select[@id='ctry']")
+    public WebElement countryDropDown;
+
+@FindBy(xpath="//select[@id='city']")
+    public WebElement cityDropDown;
+
+@FindBy(xpath="//select[@id='dist']")
+    public WebElement districtDropDown;
+
+@FindBy(xpath="(//button[@type='button'])[3]")
+    public WebElement searchButton2;
+
+
+    @FindBy(xpath="//span[text()='Total found : ']")
     public WebElement totalFoundText;
 
-
+    @FindBy(xpath="Error")
+    public WebElement errorMassage;
 
 
 
