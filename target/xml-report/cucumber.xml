@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="39.871" tests="3" skipped="0" failures="2" errors="0" timestamp="2025-03-12T12:57:35.930004100Z">
-<testcase classname="US-16_Admin Creat Report test" name="Admin İlanların; start date, end date, category, advert type ve status bilgilerine göre rapor oluşturabilmeli" time="20.956">
+<testsuite name="Cucumber" time="61.204" tests="3" skipped="0" failures="2" errors="0" timestamp="2025-03-13T15:35:52.242309500Z">
+<testcase classname="US-17_Manager Creat Report test" name="Manager İlanların; start date, end date, category, advert type ve status bilgilerine göre rapor oluşturabilmeli" time="21.457">
+<system-out><![CDATA[
+Given Manager olarak  Siteye gidilir........................................passed
+When Manager olarak giris yapilir...........................................passed
+And raporlar sayfasina gidilir..............................................passed
+And start date kismina "startDate"veri girilir..............................passed
+And end date kismina "endDate" veri girilir.................................passed
+And category kismina gecerli veri girilir...................................passed
+And advert type kismina gecerli veri grilir.................................passed
+And status kismina gecerli veri girilir.....................................passed
+And rapor olustur butonuna tiklanir.........................................passed
+Then rapor basariyla olustugu gosterilir....................................passed
+And sayfa kapatilir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US-17_ManagerCreatReport test" name="Manager Populer ilanlarin raporunu olusturabilmelidir" time="21.837">
 <failure type="java.lang.AssertionError">
 <![CDATA[java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:87)
 	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at GetlandEstate.stepdefs.US16CreatReportStepdefs.raporBasariylaOlustuguGosterilir(US16CreatReportStepdefs.java:86)
-	at ✽.Rapor basariyla olustugu gosterilir(file:///C:/Users/fatma/IdeaProjects/GlobalPropertyProjectE2E/src/test/resources/features/ui_features/US-16_AdminCreatReport/TC01_AdvertisementInformation.feature:16)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at org.junit.Assert.assertFalse(Assert.java:75)
+	at GetlandEstate.stepdefs.US17ManagerStepdefs.managerOlarakRaporBasariylaOlustuguGosterilir(US17ManagerStepdefs.java:116)
+	at ✽.Manager olarak  Rapor basariyla olustugu gosterilir(file:///C:/Users/fatma/IdeaProjects/GlobalPropertyProjectE2E/src/test/resources/features/ui_features/US-17_ManagerCreatReport/TC02_MostPopularProperties.feature:9)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given Siteye gidilir........................................................passed
-When Admin olarak giris yapilir.............................................passed
-And Raporlar sayfasina gidilir..............................................passed
-And Rapor butonuna tiklanir.................................................passed
-And Start date kismina gecerli veri girilir.................................passed
-And End date kismina gecerli veri girilir...................................passed
-And Category kismina gecerli veri girilir...................................passed
-And Advert type kismina gecerli veri grilir.................................passed
-And Status kismina gecerli veri girilir.....................................passed
-And Rapor olustur butonuna tiklanir.........................................passed
-Then Rapor basariyla olustugu gosterilir....................................failed
+Given Manager olarak  Siteye gidilir........................................passed
+When Manager olarak giris yapilir...........................................passed
+And Manager olarak Raporlar sayfasina gidilir...............................passed
+And Manager olarak En Populer ilanlar kisminda miktar kismi secilir.........passed
+And Manager olarak Rapor olustur butonuna tiklanir..........................passed
+Then Manager olarak  Rapor basariyla olustugu gosterilir....................failed
+And Sayfa kapatilir.........................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="US-16_AdminCreatReport test" name="Populer ilanlarin raporunu olusturabilmelidir" time="3.468">
-<system-out><![CDATA[
-Given Siteye gidilir........................................................passed
-When Profile tiklanir.......................................................passed
-And Kontrol Paneline tiklanir...............................................passed
-And Raporlar sayfasina gidilir..............................................passed
-And Rapor butonuna tiklanir.................................................passed
-And En Populer ilanlar kisminda miktar kismi secilir........................passed
-And Rapor olustur butonuna tiklanir.........................................passed
-Then Rapor basariyla olustugu gosterilir....................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US-16_AdminCreatReport test" name="Kullanici bilgilerine gore rapor olusturabilmelidir" time="15.056">
-<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='user-logo-nav navbar-nav']&quot;}
-  (Session info: chrome=134.0.6998.37)
+<testcase classname="US-17_ManagerCreatReport test" name="Kullanici bilgilerine gore rapor olusturabilmelidir" time="17.605">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[text()='Login']&quot;}
+  (Session info: chrome=134.0.6998.89)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.29.0', revision: '5fc1ec94cb'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d87e53415341d9c8b07c9a959b464475, findElement {value=//div[@class='user-logo-nav navbar-nav'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.37, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\fatma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52808}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52808/devtoo..., se:cdpVersion: 134.0.6998.37, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d87e53415341d9c8b07c9a959b464475">
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='user-logo-nav navbar-nav']"}
-  (Session info: chrome=134.0.6998.37)
+Command: [20fb8657c14793cada13d5e5370b5768, findElement {using=xpath, value=//a[text()='Login']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\fatma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50806}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50806/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 20fb8657c14793cada13d5e5370b5768">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='Login']"}
+  (Session info: chrome=134.0.6998.89)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.29.0', revision: '5fc1ec94cb'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d87e53415341d9c8b07c9a959b464475, findElement {value=//div[@class='user-logo-nav navbar-nav'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.37, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\fatma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52808}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52808/devtoo..., se:cdpVersion: 134.0.6998.37, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d87e53415341d9c8b07c9a959b464475
+Command: [20fb8657c14793cada13d5e5370b5768, findElement {using=xpath, value=//a[text()='Login']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\fatma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50806}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50806/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 20fb8657c14793cada13d5e5370b5768
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -74,18 +74,18 @@ Session ID: d87e53415341d9c8b07c9a959b464475
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
-	at GetlandEstate.stepdefs.US16CreatReportStepdefs.profileTiklanir(US16CreatReportStepdefs.java:91)
-	at ✽.Profile tiklanir(file:///C:/Users/fatma/IdeaProjects/GlobalPropertyProjectE2E/src/test/resources/features/ui_features/US-16_AdminCreatReport/TC03_Users.feature:5)
+	at GetlandEstate.stepdefs.US17ManagerStepdefs.managerOlarakGirisYapilir(US17ManagerStepdefs.java:28)
+	at ✽.Manager olarak giris yapilir(file:///C:/Users/fatma/IdeaProjects/GlobalPropertyProjectE2E/src/test/resources/features/ui_features/US-17_ManagerCreatReport/TC03_Users.feature:6)
 ]]>
 </failure>
 <system-out><![CDATA[
-When Profile tiklanir.......................................................failed
-And Kontrol Paneline tiklanir...............................................skipped
-And Raporlar sayfasina gidilir..............................................skipped
-And Rapor butonuna tiklanir.................................................skipped
-And Kullanicilar kismi Admin olarak secilir.................................skipped
-And Raporu Olustur butonuna tiklanir........................................skipped
-Then Admin kullanici bilgisiyle raporun olusturuldugu  gorulur..............skipped
+Given Manager olarak  Siteye gidilir........................................passed
+When Manager olarak giris yapilir...........................................failed
+And Manager olarak Raporlar sayfasina gidilir...............................skipped
+And Manager olarak Kullanicilar kismi Manager olarak secilir................skipped
+And Manager olarak Raporu Olustur butonuna tiklanir.........................skipped
+Then Manager olarak Admin kullanici bilgisiyle raporun olusturuldugu  gorulur.skipped
+And Sayfa kapatilir.........................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>
