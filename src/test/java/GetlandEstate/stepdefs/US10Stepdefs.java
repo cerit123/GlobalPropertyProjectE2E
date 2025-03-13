@@ -1,9 +1,7 @@
 package GetlandEstate.stepdefs;
 
 import GetlandEstate.pages.SearchPage;
-import GetlandEstate.utilities.ConfigReader;
-import GetlandEstate.utilities.Driver;
-import GetlandEstate.utilities.ReusableMethods;
+import GetlandEstate.utilities.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,12 +15,12 @@ import java.util.Random;
 public class US10Stepdefs {
 
     SearchPage searchPage= new SearchPage();
-   // Select advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
- //  Select countryDropDown=new Select(searchPage.countryDropDown);
- //  Select cityDropDown=new Select(searchPage.cityDropDown);
- //  Select categoryDropDown=new Select(searchPage.categoryDropDown);
- //  Select districtDropDown=new Select(searchPage.districtDropDown);
-  //  @Given("sayfaya gidilir")
+    Select advertTypeDropDown;
+   Select  countryDropDown;
+   Select  cityDropDown;
+   Select  categoryDropDown;
+  Select   districtDropDown;
+    @Given("sayfaya gidilir")
   //  public void sayfayaGidilir() {
   //      Driver.getDriver().get("http://64.227.123.49/");
   //  }
@@ -40,18 +38,20 @@ public class US10Stepdefs {
 
     @And("search butonuna tıklanır")
     public void searchButonunaTıklanır() {
+        JSUtils.JSscrollIntoView(searchPage.searchButton);
         searchPage.searchButton.click();
     }
 
     @And("açılan pencerede seçilen ürünün geldiği görünür")
     public void açılanPenceredeSeçilenÜrününGeldiğiGörünür() {
+        JSUtils.JSscrollAllTheWayUp();
         Assert.assertTrue(searchPage.totalFoundText.isDisplayed());
     }
 
-    @Then("sayfa kapatılır")
-    public void sayfaKapatılır() {
-        Driver.closeDriver();
-    }
+  //  @Then("sayfa kapatılır")
+  //  public void sayfaKapatılır() {
+  //      Driver.closeDriver();
+  //  }
 
 
 
@@ -68,14 +68,20 @@ public class US10Stepdefs {
 
     @And("Advert Type, Category, dropdownlarında all seçeneği seçilir")
     public void advertTypeCategoryDropdownlarındaAllSeçeneğiSeçilir() {
-        ReusableMethods.ddmValue(searchPage.advertTypeDropDown,"All");
-        ReusableMethods.ddmValue(searchPage.categoryDropDown,"All");
+
+        advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
+        JSUtils.JSscrollIntoView(searchPage.advertTypeDropDown);
+        advertTypeDropDown.selectByVisibleText("All");
+
+        JSUtils.JSscrollIntoView(searchPage.categoryDropDown);
+        categoryDropDown=new Select(searchPage.categoryDropDown);
+       categoryDropDown.selectByVisibleText("All");
 
     }
 
     @And("Country,City,District  dropdown ından herhangi bir seçenek seçilir")
     public void countryCityDistrictDropdownIndanHerhangiBirSeçenekSeçilir() {
-       ReusableMethods.ddmValue(searchPage.countryDropDown,"All");
+
 
     }
 
@@ -96,8 +102,18 @@ public class US10Stepdefs {
 
     @And("Advert Type, Category, Country dropdownlarında all seçeneği seçilmelidir")
     public void advertTypeCategoryCountryDropdownlarındaAllSeçeneğiSeçilmelidir() {
+        JSUtils.JSscrollIntoView(searchPage.advertTypeDropDown);
+        advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
         ReusableMethods.ddmValue(searchPage.advertTypeDropDown,"All");
+
+
+        JSUtils.JSscrollIntoView(searchPage.categoryDropDown);
+        categoryDropDown=new Select(searchPage.categoryDropDown);
         ReusableMethods.ddmValue(searchPage.categoryDropDown,"All");
+
+
+        JSUtils.JSscrollIntoView(searchPage.countryDropDown);
+        countryDropDown=new Select(searchPage.countryDropDown);
         ReusableMethods.ddmValue(searchPage.countryDropDown,"All");
 
     }

@@ -6,8 +6,8 @@ Feature:
    And   search box ın altındaki istenilen "<emlakTürü>" seçilir
 
    And   search butonuna tıklanır
-   And   açılan pencerede seçilen ürünün geldiği görünür
-   Then  sayfa kapatılır
+   Then  açılan pencerede seçilen ürünün geldiği görünür
+
    Examples:
      | emlakTürü |
      | HOUSE        |

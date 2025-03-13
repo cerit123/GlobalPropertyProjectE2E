@@ -10,5 +10,5 @@ Feature:
    And    City ve District  dropdownları boş olmalıdır
    Then   search butonuna tıklanır
    Then   uyarı mesajı görülmelidir
-   Then   sayfa kapatılır
+
 

@@ -10,5 +10,5 @@ Feature:
    And    Country,City,District  dropdown ından herhangi bir seçenek seçilir
    Then   search butonuna tıklanır
    Then   arama sonucunun başarılı olduğu görülür
-   Then   sayfa kapatılır
+
 

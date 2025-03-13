@@ -7,6 +7,7 @@ import GetlandEstate.utilities.Driver;
 import GetlandEstate.utilities.WaitUtils;
 import io.cucumber.java.Before;
 import org.junit.After;
+import org.junit.AfterClass;
 
 public class hookAdmin {
 
@@ -25,6 +26,8 @@ public class hookAdmin {
 
         WaitUtils.waitFor(2);
     }
+
+
 
     @After
     public void tearDown() {
