@@ -105,4 +105,37 @@ public class US10Stepdefs {
     public void uyarıMesajıGörülmelidir() {
         Assert.assertTrue(searchPage.errorMassage.isDisplayed());
     }
+
+    @And("açılan sol pencerede Price Range bölümünde min kutusuna bir değer girilir")
+    public void açılanSolPenceredePriceRangeBölümündeMinKutusunaBirDeğerGirilir() {
+        searchPage.minPriceRange.sendKeys("100");
+    }
+
+    @And("açılan sol pencerede Price Range bölümünde max kutusuna miinimum değerden küçük bir değer girilir")
+    public void açılanSolPenceredePriceRangeBölümündeMaxKutusunaMiinimumDeğerdenKüçükBirDeğerGirilir() {
+    searchPage.maxPriceRange.sendKeys("50");
+    }
+
+
+    @And("search box ın altındaki istenilen emlak seçilir")
+    public void searchBoxInAltındakiIstenilenEmlakSeçilir() {
+        searchPage.villaButton.click();
+    }
+
+    @And("gelen ürünlerden bir tanesi üzerine tıklayarak açılır")
+    public void gelenÜrünlerdenBirTanesiÜzerineTıklayarakAçılır() {
+        
+    }
+
+    @And("açılan ürün sayfasında description bilgileri görünür")
+    public void açılanÜrünSayfasındaDescriptionBilgileriGörünür() {
+    }
+
+    @And("açılan ürün sayfasında DETAILSbilgileri görünür")
+    public void açılanÜrünSayfasındaDETAILSbilgileriGörünür() {
+    }
+
+    @Then("açılan ürün sayfasında LOCATION bilgileri görünür")
+    public void açılanÜrünSayfasındaLOCATIONBilgileriGörünür() {
+    }
 }

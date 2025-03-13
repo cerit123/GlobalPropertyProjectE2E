@@ -2,7 +2,8 @@
 @US-10 @UI
 Feature:
  Scenario:Price Range min box ına negatif değer girldiğinde hata mesajı vemeli (negative)
-   Given  search box ın üzerindeki rent butonuna tıklanır
+   Given  sayfaya gidilir
+   And    search box ın üzerindeki rent butonuna tıklanır
    And    search butonuna tıklanır
    And    açılan sol pencerede Price Range bölümünde min kutusuna negatif değer yazılır
    And    açılan sol pencerede Price Range bölümünde max kutusu boş bırakılır
@@ -10,4 +11,5 @@ Feature:
    And    City ve District  dropdownları boş olmalıdır
    Then   search butonuna tıklanır
    Then   uyarı mesajı görülmelidir
+   Then   sayfa kapatılır
 
