@@ -8,12 +8,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class US2UserLoginStepdefs {
-  /*  @Given("sayfaya gidilir")
-    public void sayfayaGidilir() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-    }
-    
-   */
+  // @Given("sayfaya gidilir")
+  // public void sayfayaGidilir() {
+  //     Driver.getDriver().get(ConfigReader.getProperty("url"));
+  // }
 
     @When("Login sekmesine tiklanir")
     public void loginSekmesineTiklanir() {

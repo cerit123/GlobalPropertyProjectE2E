@@ -1,5 +1,5 @@
 
-@US-10 @UI
+@US-10 @UI @Admin
 Feature:
  Scenario:Price Range min box ına negatif değer girldiğinde hata mesajı vemeli (negative)
    Given  search box ın üzerindeki rent butonuna tıklanır
@@ -10,4 +10,5 @@ Feature:
    And    City ve District  dropdownları boş olmalıdır
    Then   search butonuna tıklanır
    Then   uyarı mesajı görülmelidir
+   Then   sayfa kapatılır
 
