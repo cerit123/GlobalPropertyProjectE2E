@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="Cucumber" time="375.164" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-03-12T19:00:25.901828400Z">
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.1" time="74.169">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "HOUSE" seçilir.......................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.2" time="52.342">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "APARTMENT" seçilir...................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.3" time="66.502">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "OFFICE" seçilir......................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.4" time="71.772">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "VILLA" seçilir.......................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.5" time="59.329">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "LAND" seçilir........................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="" name="Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli - #1.6" time="50.573">
+<system-out><![CDATA[
+Given sayfaya gidilir.......................................................passed
+And search box ın üzerindeki rent butonuna tıklanır.........................passed
+And search box ın altındaki istenilen "SHOP" seçilir........................passed
+And search butonuna tıklanır................................................passed
+And açılan pencerede seçilen ürünün geldiği görünür.........................passed
+Then sayfa kapatılır........................................................passed
+=======
+<testsuite name="Cucumber" time="39.871" tests="3" skipped="0" failures="2" errors="0" timestamp="2025-03-12T12:57:35.930004100Z">
+<testcase classname="US-16_Admin Creat Report test" name="Admin İlanların; start date, end date, category, advert type ve status bilgilerine göre rapor oluşturabilmeli" time="20.956">
+<failure type="java.lang.AssertionError">
+<![CDATA[java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at GetlandEstate.stepdefs.US16CreatReportStepdefs.raporBasariylaOlustuguGosterilir(US16CreatReportStepdefs.java:86)
+	at ✽.Rapor basariyla olustugu gosterilir(file:///C:/Users/fatma/IdeaProjects/GlobalPropertyProjectE2E/src/test/resources/features/ui_features/US-16_AdminCreatReport/TC01_AdvertisementInformation.feature:16)
+]]>
+</failure>
+<system-out><![CDATA[
+Given Siteye gidilir........................................................passed
+When Admin olarak giris yapilir.............................................passed
+And Raporlar sayfasina gidilir..............................................passed
+And Rapor butonuna tiklanir.................................................passed
+And Start date kismina gecerli veri girilir.................................passed
+And End date kismina gecerli veri girilir...................................passed
+And Category kismina gecerli veri girilir...................................passed
+And Advert type kismina gecerli veri grilir.................................passed
+And Status kismina gecerli veri girilir.....................................passed
+And Rapor olustur butonuna tiklanir.........................................passed
+Then Rapor basariyla olustugu gosterilir....................................failed
+]]></system-out>
+</testcase>
+<testcase classname="US-16_AdminCreatReport test" name="Populer ilanlarin raporunu olusturabilmelidir" time="3.468">
+<system-out><![CDATA[
+Given Siteye gidilir........................................................passed
+When Profile tiklanir.......................................................passed
+And Kontrol Paneline tiklanir...............................................passed
+And Raporlar sayfasina gidilir..............................................passed
+And Rapor butonuna tiklanir.................................................passed
+And En Populer ilanlar kisminda miktar kismi secilir........................passed
+And Rapor olustur butonuna tiklanir.........................................passed
+Then Rapor basariyla olustugu gosterilir....................................passed
+>>>>>>> master
+]]></system-out>
+</testcase>
+<testcase classname="US-16_AdminCreatReport test" name="Kullanici bilgilerine gore rapor olusturabilmelidir" time="15.056">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='user-logo-nav navbar-nav']&quot;}
+  (Session info: chrome=134.0.6998.37)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d87e53415341d9c8b07c9a959b464475, findElement {value=//div[@class='user-logo-nav navbar-nav'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.37, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\fatma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52808}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52808/devtoo..., se:cdpVersion: 134.0.6998.37, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d87e53415341d9c8b07c9a959b464475">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='user-logo-nav navbar-nav']"}
+  (Session info: chrome=134.0.6998.37)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d87e53415341d9c8b07c9a959b464475, findElement {value=//div[@class='user-logo-nav navbar-nav'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.37, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\fatma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52808}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52808/devtoo..., se:cdpVersion: 134.0.6998.37, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d87e53415341d9c8b07c9a959b464475
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
+	at GetlandEstate.stepdefs.US16CreatReportStepdefs.profileTiklanir(US16CreatReportStepdefs.java:91)
+	at ✽.Profile tiklanir(file:///C:/Users/fatma/IdeaProjects/GlobalPropertyProjectE2E/src/test/resources/features/ui_features/US-16_AdminCreatReport/TC03_Users.feature:5)
+]]>
+</failure>
+<system-out><![CDATA[
+When Profile tiklanir.......................................................failed
+And Kontrol Paneline tiklanir...............................................skipped
+And Raporlar sayfasina gidilir..............................................skipped
+And Rapor butonuna tiklanir.................................................skipped
+And Kullanicilar kismi Admin olarak secilir.................................skipped
+And Raporu Olustur butonuna tiklanir........................................skipped
+Then Admin kullanici bilgisiyle raporun olusturuldugu  gorulur..............skipped
+]]></system-out>
+</testcase>
+</testsuite>

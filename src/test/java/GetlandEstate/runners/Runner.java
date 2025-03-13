@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = {"GetlandEstate/stepdefs"},
-        tags = "",
+        tags = "@US-10a",
         dryRun = false
 )
 public class Runner {
