@@ -7,9 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ContactPage {
 
+
     public ContactPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
 
     @FindBy(id = "firstName")
     public WebElement firstNameBox;
