@@ -67,7 +67,6 @@ public class SearchPage {
     @FindBy(xpath="(//button[@type='button'])[3]")
     public WebElement searchButton2;
 
-
     @FindBy(xpath="//span[text()='Total found : ']")
     public WebElement totalFoundText;
 
