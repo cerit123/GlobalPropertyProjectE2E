@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class SearchPage {
 
     public SearchPage() {
@@ -49,6 +51,8 @@ public class SearchPage {
     @FindBy(xpath="//input[@id='pe']")
     public WebElement maxPriceRange;
 
+
+
     @FindBy(xpath="//select[@id='at']")
     public WebElement advertTypeDropDown;
 
@@ -67,11 +71,28 @@ public class SearchPage {
     @FindBy(xpath="(//button[@type='button'])[3]")
     public WebElement searchButton2;
 
+
     @FindBy(xpath="//span[text()='Total found : ']")
     public WebElement totalFoundText;
 
-    @FindBy(xpath="Error")
+    @FindBy(xpath="//span[text()='Error']")
     public WebElement errorMassage;
+
+    @FindBy(css = "div.property-card.card")
+    public List<WebElement> propertiesList;
+
+    @FindBy(xpath="//img[@data-pc-section='image']")
+    public WebElement image;
+
+    @FindBy(xpath="//h4[text()='Description']")
+    public WebElement Description;
+
+    @FindBy(xpath="//h4[text()='DETAILS']")
+    public WebElement Details;
+
+    @FindBy(xpath="//h4[text()='LOCATION']")
+    public WebElement Location;
+
 
 
 

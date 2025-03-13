@@ -42,7 +42,7 @@ public class RegistrationPage {
     public WebElement registerButton;
 
 
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//div[@class='p-toast-detail']")
     public WebElement successfullMessage;
 
 
