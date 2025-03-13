@@ -7,13 +7,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(//bu notasyon sayesinde hangi scenariolari calistiracagimizi ve hangi raporlari alacagimizi belirtiriz
         plugin = {
                 "pretty",//konsol da scenariolar ile ilgili ayrintili bilgi verir
-                "html:target/US01_Cucumber_Report.html",
+                "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml"
         },
         features = "src/test/resources/features",
         glue = {"GetlandEstate/stepdefs"},
-        tags = "@US01",
+        tags = "@US-10a",
         dryRun = false
 )
 public class Runner {

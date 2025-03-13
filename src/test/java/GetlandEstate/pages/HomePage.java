@@ -53,5 +53,12 @@ public class HomePage {
 
 
 
+    @FindBy(xpath = "//div[@class='user-logo-nav navbar-nav']")
+    public WebElement profilButton;
+
+
+    @FindBy(xpath = "//span[text()='Control Panel']")
+    public WebElement controlPannelButton;
+
 
 }
