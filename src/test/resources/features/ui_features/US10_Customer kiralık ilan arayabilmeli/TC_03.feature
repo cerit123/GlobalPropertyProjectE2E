@@ -1,9 +1,8 @@
 
-@US-10 @UI
+@US-10 @UI @Admin
 Feature:
  Scenario:Price Range min box ına negatif değer girldiğinde hata mesajı vemeli (negative)
-   Given  sayfaya gidilir
-   And    search box ın üzerindeki rent butonuna tıklanır
+   Given  search box ın üzerindeki rent butonuna tıklanır
    And    search butonuna tıklanır
    And    açılan sol pencerede Price Range bölümünde min kutusuna negatif değer yazılır
    And    açılan sol pencerede Price Range bölümünde max kutusu boş bırakılır

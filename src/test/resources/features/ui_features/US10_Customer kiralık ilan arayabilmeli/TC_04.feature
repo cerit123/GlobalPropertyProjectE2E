@@ -1,5 +1,5 @@
 
-@US-10 @UI
+@US-10 @UI @Costumer
 Feature:
  Scenario:Price Range max box ına min değerinden küçük  değer girldiğinde hata mesajı vemeli (negative)
    Given  sayfaya gidilir

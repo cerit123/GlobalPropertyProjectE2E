@@ -1,10 +1,9 @@
 
-@US-10 @UI
+@UI @Costumer @US-10m
 Feature:
  Scenario:Price Range, Advert Type, Category, Country, City, District bölümlerini girerek özel arama yapabilmeli(positive)
-   Given  sayfaya gidilir
-   When   search box ın üzerindeki rent butonuna tıklanır
-   And    search butonuna tıklanır
+   Given  search box ın üzerindeki rent butonuna tıklanır
+   Then   search butonuna tıklanır
    And    açılan sol pencerede Price Range bölümünde min kutusuna geçerli bir data girilir
    And    açılan sol pencerede Price Range bölümünde max kutusuna geçerli ve min kutusundaki değerden büyük bir data girilri
    And    Advert Type, Category, dropdownlarında all seçeneği seçilir
