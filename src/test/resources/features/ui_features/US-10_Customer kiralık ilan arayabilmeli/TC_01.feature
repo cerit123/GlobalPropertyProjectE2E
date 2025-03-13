@@ -1,5 +1,5 @@
 
-@UI @Manager @US-10a
+@UI @Costumer @US-10
 Feature:
  Scenario Outline: Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli
    Given search box ın üzerindeki rent butonuna tıklanır
