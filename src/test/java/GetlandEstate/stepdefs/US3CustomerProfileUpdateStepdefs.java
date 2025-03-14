@@ -13,6 +13,7 @@ public class US3CustomerProfileUpdateStepdefs {
 
     @And("My Profile sekmesine tiklanir")
     public void myProfileSekmesineTiklanir() {
+        //profilBilgilerininDegistirildigiDogrulanir();
     }
 
     @And("First name\\/Last name\\/ Phone\\/ email guncellenir")
