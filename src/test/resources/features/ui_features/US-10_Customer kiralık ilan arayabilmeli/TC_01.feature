@@ -7,6 +7,7 @@ Feature:
 
    And   search butonuna tıklanır
    Then  açılan pencerede seçilen ürünün geldiği görünür
+   Then  sayfa kapatilir
 
    Examples:
      | emlakTürü |

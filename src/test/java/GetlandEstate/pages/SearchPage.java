@@ -65,7 +65,7 @@ public class SearchPage {
     @FindBy(xpath="//select[@id='dist']")
     public WebElement districtDropDown;
 
-    @FindBy(xpath="(//button[@type='button'])[3]")
+    @FindBy(xpath="//button[text()='Search']")
     public WebElement searchButton2;
 
 
@@ -89,6 +89,27 @@ public class SearchPage {
 
     @FindBy(xpath="//h4[text()='LOCATION']")
     public WebElement Location;
+
+    @FindBy(xpath="(//button[@type='button'])[4]")
+    public WebElement contactNumberButton;
+
+  @FindBy(xpath="(//button[@type='button'])[3]")
+    public WebElement contactNumber;
+
+  @FindBy(xpath="(//button[@type='button'])[6]")
+    public WebElement sendMailButton;
+
+  @FindBy(xpath="(//button[@type='button'])[5]")
+    public WebElement sendMail;
+
+@FindBy(id="tourDate")
+    public WebElement tourDate;
+
+@FindBy(id="tourTime")
+    public WebElement tourTime;
+
+@FindBy(xpath="//button[@type='submit']")
+    public WebElement SubmitTourRequestButton;
 
 
 

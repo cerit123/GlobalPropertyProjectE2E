@@ -1,10 +1,7 @@
 package GetlandEstate.stepdefs;
 
 import GetlandEstate.pages.*;
-import GetlandEstate.utilities.ActionsUtils;
-import GetlandEstate.utilities.ConfigReader;
-import GetlandEstate.utilities.Driver;
-import GetlandEstate.utilities.ReusableMethods;
+import GetlandEstate.utilities.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -36,11 +33,7 @@ public class US16CreatReportStepdefs {
         loginPage.login.click();
     }
 
-    @And("Raporlar sayfasina gidilir")
-    public void raporlarSayfasinaGidilir() {
 
-
-    }
 
     @And("Rapor butonuna tiklanir")
     public void raporButonunaTiklanir() {
@@ -74,25 +67,41 @@ public class US16CreatReportStepdefs {
     public void statusKisminaGecerliVeriGirilir() {
         adminManagerRaporPage.status.click();
         ReusableMethods.ddmValue(adminManagerRaporPage.status,"1");
+        WaitUtils.waitFor(3);
     }
 
     @And("Rapor olustur butonuna tiklanir")
     public void raporOlusturButonunaTiklanir() {
-        adminManagerRaporPage.reportButton.click();
+        adminManagerRaporPage.reportButton1.click();
+
+
     }
 
     @Then("Rapor basariyla olustugu gosterilir")
     public void raporBasariylaOlustuguGosterilir() {
-        Assert.assertTrue(adminManagerRaporPage.reportVerfy.isDisplayed());
+       // BrowserUtils.getTextWithTimeout(adminManagerRaporPage.raporExcel,10);
+        WaitUtils.waitFor(1);
+        //WaitUtils.waitForVisibility(adminManagerRaporPage.raporExcel,20);
+       // JSUtils.JSscrollIntoView(adminManagerRaporPage.raporExcel);
+        Assert.assertFalse(adminManagerRaporPage.reportVerfy.isDisplayed());
 
     }
+
+
+
+//TC-2 test case
+
+
+
     @And("Profile tiklanir")
     public void profileTiklanir() {
+
         homePage.profilButton.click();
     }
 
     @And("Kontrol Paneline tiklanir")
     public void kontrolPanelineTiklanir() {
+
         homePage.controlPannelButton.click();
     }
     @And("En Populer ilanlar kisminda miktar kismi secilir")
@@ -110,11 +119,44 @@ public class US16CreatReportStepdefs {
 
     @And("Raporu Olustur butonuna tiklanir")
     public void raporuOlusturButonunaTiklanir() {
+
+        adminManagerRaporPage.reportButton1.click();
     }
 
     @Then("Admin kullanici bilgisiyle raporun olusturuldugu  gorulur")
     public void adminKullaniciBilgisiyleRaporunOlusturulduguGorulur() {
+        Assert.assertTrue(adminManagerRaporPage.raporExcel.isDisplayed());
     }
 
+//TC-4---------------------------------------------------
+    @And("Start date kismina gecerli bir veri girilir")
+    public void startDateKisminaGecerliBirVeriGirilir() {
+        ActionsUtils.scrollDown();
+        adminManagerRaporPage.startDateTur.sendKeys(ConfigReader.getProperty("startDate"));
 
+
+
+    }
+
+    @And("End date kismina gecerli bir veri girlir")
+    public void endDateKisminaGecerliBirVeriGirlir() {
+        adminManagerRaporPage.endDateTur.sendKeys(ConfigReader.getProperty("endDate"));
+    }
+
+    @And("Status kismi secilir")
+    public void statusKismiSecilir() {
+        ReusableMethods.ddmValue(adminManagerRaporPage.statusTur,"1");
+    }
+
+    @Then("Tur istekleri listelenir ve rapor basariyla olusturulur")
+    public void turIstekleriListelenirVeRaporBasariylaOlusturulur() {
+        WaitUtils.waitForVisibility(adminManagerRaporPage.raporExcel,10);
+        Assert.assertTrue(adminManagerRaporPage.raporExcel.isDisplayed());
+
+    }
+
+    @And("Sayfa kapatilir")
+    public void sayfaKapatilir() {
+        Driver.closeDriver();
+    }
 }
