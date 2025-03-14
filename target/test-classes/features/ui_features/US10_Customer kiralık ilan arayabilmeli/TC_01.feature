@@ -1,5 +1,13 @@
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+@US-10a @UI
+=======
 @UI @Manager @US-10a
+>>>>>>> master
+=======
+@UI @Manager @US-10a
+>>>>>>> 26d1763fcfb43df0c09ac1ed201a1a54e5768d47
 Feature:
  Scenario Outline: Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli
    Given search box ın üzerindeki rent butonuna tıklanır

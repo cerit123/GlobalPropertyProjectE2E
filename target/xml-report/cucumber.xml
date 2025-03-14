@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<testsuite name="Cucumber" time="0.293" tests="0" skipped="0" failures="0" errors="0" timestamp="2025-03-13T23:09:03.684915100Z">
+=======
+=======
+>>>>>>> 26d1763fcfb43df0c09ac1ed201a1a54e5768d47
 <testsuite name="Cucumber" time="61.204" tests="3" skipped="0" failures="2" errors="0" timestamp="2025-03-13T15:35:52.242309500Z">
 <testcase classname="US-17_Manager Creat Report test" name="Manager İlanların; start date, end date, category, advert type ve status bilgilerine göre rapor oluşturabilmeli" time="21.457">
 <system-out><![CDATA[
@@ -88,4 +94,5 @@ Then Manager olarak Admin kullanici bilgisiyle raporun olusturuldugu  gorulur.sk
 And Sayfa kapatilir.........................................................skipped
 ]]></system-out>
 </testcase>
+>>>>>>> master
 </testsuite>
