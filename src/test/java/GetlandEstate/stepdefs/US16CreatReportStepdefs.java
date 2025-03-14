@@ -39,7 +39,6 @@ public class US16CreatReportStepdefs {
     @And("Raporlar sayfasina gidilir")
     public void raporlarSayfasinaGidilir() {
 
-
     }
 
     @And("Rapor butonuna tiklanir")

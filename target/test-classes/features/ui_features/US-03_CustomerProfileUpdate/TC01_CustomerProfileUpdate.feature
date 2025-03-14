@@ -6,10 +6,7 @@ Feature: US3_CustomerProfileUpdate Test
     When Login sekmesine tiklanir
     And Profil butonuna tiklanir
     And My Profile sekmesine tiklanir
-    And First name guncellenir
-    And Last name guncellenir
-    And Phone guncellenir
-    And Email guncellenir
+    And First name/Last name/ Phone/ email guncellenir
     And Update butonuna tiklanir
     Then Profil bilgilerinin degistirildigi dogrulanir
 
