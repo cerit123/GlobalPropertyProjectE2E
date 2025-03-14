@@ -7,6 +7,8 @@ public class US3CustomerProfileUpdateStepdefs {
     @And("Profil butonuna tiklanir")
     public void profilButonunaTiklanir() {
 
+    //profilBilgilerininDegistirildigiDogrulanir();
+
     }
 
     @And("My Profile sekmesine tiklanir")
