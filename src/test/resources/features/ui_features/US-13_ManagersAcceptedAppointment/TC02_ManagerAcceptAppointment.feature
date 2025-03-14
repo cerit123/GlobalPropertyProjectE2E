@@ -1,13 +1,14 @@
-@US-13 @UI
+@US-13
 
 Feature:US-13_Manager Accept Appointment Test
 
   Scenario:Manager randevu isteklerini kabul edebilmelidir
 
-    Given Siteye gidilir.
-    When Manager olarak  giris yapilir.
-    And anasayfaya tikla
-    And sag ust profilden tur taleplerine tikla
-    And acilan sekmedeki tur cevaplarima tikla
-    And randevu istegindeki kabul et tiklanir
-    Then randevu istegini kabul et "evet "tiklanir
+
+    Given siteye geri don kismina tiklamalidir
+    When profile tiklamalidir
+    And Tur Taleplerime tiklamalidir
+    And "Tur Cevaplarim" listesi goruntulenir.
+   And onaylanma kismina tiklanir
+    And cikan sekmedeki evet kutusuna tiklanir
+    Then onaylandigina dair yazi kontrol edilir.
