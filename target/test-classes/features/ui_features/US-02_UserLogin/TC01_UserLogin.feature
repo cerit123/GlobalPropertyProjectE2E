@@ -3,7 +3,11 @@
 
     Scenario: Kullanici siteye kayit oldugu email adresiyle login yapabilmelidir
 
+<<<<<<< HEAD
       # Given Siteye gidilir
+=======
+      Given Siteye gidilir
+>>>>>>> master
       When Login sekmesine tiklanir
       And Siteye kaydolunan email adresi girilir
       And Kullanici password girilir

@@ -1,11 +1,11 @@
-@UI
+@UI@US-16
 Feature: US-16_AdminCreatReport test
 
   Scenario: Tur isteklerine gore rapor olusturabilmelidir
     Given Siteye gidilir
-    When Admin olarak giris yapilir
-    And Raporlar sekmesine gidilir
-    And Tur Talepleri kisminda gecerli datalar girilir
+    When Profile tiklanir
+    And Kontrol Paneline tiklanir
+    And Rapor butonuna tiklanir
     And Start date kismina gecerli bir veri girilir
     And End date kismina gecerli bir veri girlir
     And Status kismi secilir

@@ -7,6 +7,7 @@ Feature: US-16_AdminCreatReport test
     And Profil kismina gidilir
     And Kontrol Paneli  sekmesine gidilir
     Then "Kontrol Paneli " sekmesinin olmadigi gorulur
+    And Sayfa kapatilir
 
 
 
