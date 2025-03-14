@@ -8,6 +8,7 @@ public class US3CustomerProfileUpdateStepdefs {
     public void profilButonunaTiklanir() {
 
     //profilBilgilerininDegistirildigiDogrulanir();
+    //profilBilgilerininDegistirildigiDogrulanir();
 
     }
 
