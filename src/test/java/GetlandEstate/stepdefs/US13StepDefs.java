@@ -4,6 +4,7 @@ import GetlandEstate.pages.DashboardPage;
 import GetlandEstate.pages.HomePage;
 import GetlandEstate.pages.LoginPage;
 import GetlandEstate.pages.MyTourRequestsPage;
+import GetlandEstate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,7 +21,10 @@ public class US13StepDefs {
 
     @Given("siteye geri don kismina tiklamalidir")
     public void siteyeGeriDonKisminaTiklamalidir() {
+        ReusableMethods.waitForSecond(3);
+        homePage.controlPannelButton.click();
         dashboardPage.backToSite.click();
+        homePage.profilButton.click();
     }
 
     @When("profile tiklamalidir")
