@@ -60,6 +60,8 @@ public class US13StepDefs {
 
     @And("cikan sekmedeki evet kutusuna tiklanir")
     public void cikanSekmedekiEvetKutusunaTiklanir() {
+        myTourRequestsPage.actionUpdateButton.click();
+
     }
 
     @Then("onaylandigina dair yazi kontrol edilir.")
