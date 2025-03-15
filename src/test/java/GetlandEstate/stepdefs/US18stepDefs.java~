@@ -30,16 +30,24 @@ public class US18stepDefs {
         loginPage.login.click();
 
         //ActionsUtils.scrollDown()
+<<<<<<< Updated upstream
+        loginPage.loginButton.click();
+        ActionsUtils.scrollLeft();
+        ActionsUtils.scrollDown();
+        loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
+        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
+        loginPage.login.click();
+=======
         ReusableMethods.waitForSecond(3);
         //homePage.controlPannelButton.click();
+>>>>>>> Stashed changes
         dashboardPage.backToSite.click();
-        homePage.profilButton.click();
-        homePage.profilButton.click();
-        myTourRequestsPage.myTourRequests.click();
     }
 
     @When("Istenilen ilan a tiklanir")
     public void ıstenilenIlanATiklanir() {
+        homePage.profilButton.click();
+        myTourRequestsPage.myTourRequests.click();
         myTourRequestsPage.myRequests.click();
         myTourRequestsPage.actionUpdateButton.click();
 
@@ -53,6 +61,7 @@ public class US18stepDefs {
     @And("Schedule a Tour kismindan  tur saati secilir.")
     public void scheduleATourKismindanTurSaatiSecilir() {
         ReusableMethods.ddmVisibleText(myTourRequestsPage.timeBooking,"18:00");
+        myTourRequestsPage.timeBooking.click();
     }
 
     @And("Submit a tour request butonu  tiklanir.")
@@ -68,15 +77,41 @@ public class US18stepDefs {
 
     //TC02
 
+<<<<<<< Updated upstream
+
+    @Given("Manager olarak giris yapilir.")
+    public void managerOlarakGirisYapilir() {
+=======
     @Given("Manager olarak giris yapilir.")
     public void managerOlarakGirisYapilir() {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
+>>>>>>> Stashed changes
         loginPage.loginButton.click();
         ActionsUtils.scrollLeft();
         ActionsUtils.scrollDown();
         loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
         loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
         loginPage.login.click();
+<<<<<<< Updated upstream
+        dashboardPage.backToSite.click();
+
+    }
+
+    @And("Profil menusunden  My Tour Requests sekmesi tiklanir")
+    public void profilMenusundenMyTourRequestsSekmesiTiklanir() {
+
+        homePage.profilButton.click();
+        myTourRequestsPage.myTourRequests.click();
+        myTourRequestsPage.myRequests.click();
+    }
+
+    @And("My Responses listesi acilir.")
+    public void myResponsesListesiAcilir() {
+    }
+
+    @Then("My Respopnses listesindeki guest goruntulenebiliyor mu kontrol edilir.")
+    public void myRespopnsesListesindekiGuestGoruntulenebiliyorMuKontrolEdilir() {
+=======
 
     }
 
@@ -95,6 +130,7 @@ public class US18stepDefs {
     @Then("{string} listesindeki guest  goruntulenebiliyor mu kontrol edilir.")
     public void listesindekiGuestGoruntulenebiliyorMuKontrolEdilir(String arg0) {
         Assert.assertTrue(myTourRequestsPage.guest.isDisplayed());
+>>>>>>> Stashed changes
     }
 }
 
