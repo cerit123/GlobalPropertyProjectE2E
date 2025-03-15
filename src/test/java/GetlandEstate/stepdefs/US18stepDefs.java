@@ -21,13 +21,13 @@ public class US18stepDefs {
     @Given("Homepage e tiklanir.")
     public void homepageETiklanir() {
 
-            Driver.getDriver().get(ConfigReader.getProperty("url"));
-        loginPage.loginButton.click();
-        ActionsUtils.scrollLeft();
-        ActionsUtils.scrollDown();
-        loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
-        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
-        loginPage.login.click();
+          //  Driver.getDriver().get(ConfigReader.getProperty("url"));
+       // loginPage.loginButton.click();
+       // ActionsUtils.scrollLeft();
+       // ActionsUtils.scrollDown();
+        //loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
+        //loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
+        //loginPage.login.click();
 
         //ActionsUtils.scrollDown()
         ReusableMethods.waitForSecond(3);
