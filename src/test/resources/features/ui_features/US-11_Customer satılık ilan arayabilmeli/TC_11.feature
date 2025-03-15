@@ -1,8 +1,8 @@
 
-@US-10 @Costumer
+@US-11 @Costumer
 Feature:
  Scenario:Randevu isteği onaylandığında ve reddedildiğinde görebilmeli
-   Given  search box ın üzerindeki rent butonuna tıklanır
+   Given  search box ın üzerindeki sale butonuna tıklanır
    And    search box ın altındaki istenilen emlak seçilir
    And    search butonuna tıklanır
    And    gelen ürünlerden bir tanesi üzerine tıklayarak açılır

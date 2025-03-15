@@ -15,9 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-public class US10Stepdefs {
+public class US10_US11Stepdefs {
 
     SearchPage searchPage= new SearchPage();
     Faker faker;
@@ -33,6 +32,8 @@ public class US10Stepdefs {
 //
     @Given("search box ın üzerindeki rent butonuna tıklanır")
     public void searchBoxInÜzerindekiRentButonunaTıklanır() {
+
+        ReusableMethods.waitForSecond(2);
         searchPage.rentButton.click();
     }
 
@@ -78,11 +79,11 @@ public class US10Stepdefs {
        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='at']/option[text()='All']")));
 
-      ActionsUtils.scrollDown();
+       ActionsUtils.scrollDown();
 
 
        advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
-      ReusableMethods.waitForSecond(1);
+       ReusableMethods.waitForSecond(1);
        advertTypeDropDown.selectByVisibleText("All");
 
 
@@ -120,11 +121,11 @@ public class US10Stepdefs {
 
         JSUtils.JSscrollIntoView(searchPage.advertTypeDropDown);
         advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
-advertTypeDropDown.selectByValue("1");
+        advertTypeDropDown.selectByValue("1");
 
         JSUtils.JSscrollIntoView(searchPage.categoryDropDown);
         categoryDropDown=new Select(searchPage.categoryDropDown);
-       categoryDropDown.selectByVisibleText("All");
+        categoryDropDown.selectByVisibleText("All");
 
 
         JSUtils.JSscrollIntoView(searchPage.countryDropDown);
@@ -151,7 +152,7 @@ advertTypeDropDown.selectByValue("1");
 
     @And("açılan sol pencerede Price Range bölümünde max kutusuna miinimum değerden küçük bir değer girilir")
     public void açılanSolPenceredePriceRangeBölümündeMaxKutusunaMiinimumDeğerdenKüçükBirDeğerGirilir() {
-    searchPage.maxPriceRange.sendKeys("50");
+        searchPage.maxPriceRange.sendKeys("50");
     }
 
 
@@ -162,15 +163,15 @@ advertTypeDropDown.selectByValue("1");
 
     @And("gelen ürünlerden bir tanesi üzerine tıklayarak açılır")
     public void gelenÜrünlerdenBirTanesiÜzerineTıklayarakAçılır() {
-      Driver.getDriver().navigate().refresh();
+        Driver.getDriver().navigate().refresh();
 
-        if (!searchPage.propertiesList.isEmpty()) {
-            Random random = new Random();
-            int randomIndex = random.nextInt(searchPage.propertiesList.size());
-            searchPage.propertiesList.get(randomIndex).click();
-        } else {
-            throw new RuntimeException("No property images found!");
-        }
+            if (!searchPage.propertiesList.isEmpty()) {
+                Random random = new Random();
+                int randomIndex = random.nextInt(searchPage.propertiesList.size());
+                searchPage.propertiesList.get(randomIndex).click();
+            } else {
+                throw new RuntimeException("No property images found!");
+            }
         
     }
 
@@ -199,8 +200,8 @@ advertTypeDropDown.selectByValue("1");
     public void searchhButonunaTıklanır() {
         ActionsUtils.scrollDown();
         ReusableMethods.waitForSecond(30);
-      // WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-      // WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(searchPage.searchButton2));
+        // WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        // WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(searchPage.searchButton2));
         searchPage.searchButton2.click();
     }
 
@@ -239,7 +240,7 @@ advertTypeDropDown.selectByValue("1");
         int randomIndex = random.nextInt(options.size());
         select.selectByIndex(randomIndex);
 
-       // ReusableMethods.ddmValue(searchPage.tourTime,"11:00");
+        // ReusableMethods.ddmValue(searchPage.tourTime,"11:00");
     }
 
     @And("Submit a tour request butonuna basılır")
@@ -291,6 +292,11 @@ advertTypeDropDown.selectByValue("1");
     @Then("Status sütununda oluşturulan randevunun durumu görülür")
     public void statusSütunundaOluşturulanRandevununDurumuGörülür() {
         Assert.assertNotNull(searchPage.statusVerify.getText());
+    }
+
+    @Given("search box ın üzerindeki sale butonuna tıklanır")
+    public void searchBoxInÜzerindekiSaleButonunaTıklanır() {
+        searchPage.saleButton.click();
     }
 }
 
