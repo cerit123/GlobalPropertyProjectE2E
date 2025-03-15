@@ -1,9 +1,7 @@
 package GetlandEstate.stepdefs;
 
-import GetlandEstate.pages.DashboardPage;
-import GetlandEstate.pages.HomePage;
-import GetlandEstate.pages.LoginPage;
-import GetlandEstate.pages.MyTourRequestsPage;
+import GetlandEstate.pages.*;
+import GetlandEstate.utilities.ActionsUtils;
 import GetlandEstate.utilities.ConfigReader;
 import GetlandEstate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
@@ -14,12 +12,16 @@ import org.junit.Assert;
 
 public class US18stepDefs {
     HomePage homePage= new HomePage();
+
     LoginPage loginPage= new LoginPage();
     DashboardPage dashboardPage= new DashboardPage();
     MyTourRequestsPage myTourRequestsPage=new MyTourRequestsPage();
 
     @Given("Homepage e tiklanir.")
     public void homepageETiklanir() {
+        //ActionsUtils.scrollDown()
+        ReusableMethods.waitForSecond(3);
+        homePage.controlPannelButton.click();
         dashboardPage.backToSite.click();
         homePage.profilButton.click();
         homePage.profilButton.click();

@@ -294,3 +294,5 @@ advertTypeDropDown.selectByValue("1");
     }
 }
 
+
+
