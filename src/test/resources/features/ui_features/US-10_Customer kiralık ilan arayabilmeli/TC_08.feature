@@ -1,7 +1,7 @@
 
-@US-10m @UI
+@US-10 @UI @Costumer
 Feature:
- Scenario:Price Range, Advert Type, Category, Country, City, District bölümlerini girerek özel arama yapabilmeli(positive)
+ Scenario:Tarih ve saat girerek ilan için randevu isteğinde bulunabilmeli ( pasitive)
    Given  search box ın üzerindeki rent butonuna tıklanır
    And    search box ın altındaki istenilen emlak seçilir
    And    search butonuna tıklanır

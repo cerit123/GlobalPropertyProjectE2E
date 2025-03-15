@@ -1,7 +1,7 @@
 
 @US-10 @UI @Costumer
 Feature:
- Scenario:Price Range, Advert Type, Category, Country, City, District bölümlerini girerek özel arama yapabilmeli(positive)
+ Scenario:İlanı verenin iletişim bilgilerini görebilmeli
    Given  search box ın üzerindeki rent butonuna tıklanır
    And    search box ın altındaki istenilen emlak seçilir
    And    search butonuna tıklanır

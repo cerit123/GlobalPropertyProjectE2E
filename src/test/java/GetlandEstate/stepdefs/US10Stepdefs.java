@@ -226,18 +226,20 @@ advertTypeDropDown.selectByValue("1");
     @And("Schedule a tour bölümünde geçerli geçerli bir tarih seçilir")
     public void scheduleATourBölümündeGeçerliGeçerliBirTarihSeçilir() {
         faker = new Faker();
-        searchPage.tourDate.sendKeys(faker.date().future(30, TimeUnit.DAYS).toString());
+        searchPage.tourDate.sendKeys("15.12.2026", Keys.TAB, Keys.TAB);
     }
 
     @And("Schedule a tour bölümünde geçerli geçerli bir saat seçilir")
     public void scheduleATourBölümündeGeçerliGeçerliBirSaatSeçilir() {
-        if (!searchPage.propertiesList.isEmpty()) {
-            Random random = new Random();
-            int randomIndex = random.nextInt(searchPage.tourTime.size());
-            searchPage.tourTime.get(randomIndex).click();
-        } else {
-            throw new RuntimeException("No property images found!");
-        }
+        Select select = new Select(searchPage.tourTime);
+
+        // Mevcut tüm saatleri al
+        List<WebElement> options = select.getOptions();
+        Random random = new Random();
+        int randomIndex = random.nextInt(options.size());
+        select.selectByIndex(randomIndex);
+
+       // ReusableMethods.ddmValue(searchPage.tourTime,"11:00");
     }
 
     @And("Submit a tour request butonuna basılır")
@@ -247,7 +249,48 @@ advertTypeDropDown.selectByValue("1");
 
     @Then("TourRequest created successfully yazısı görünür")
     public void tourrequestCreatedSuccessfullyYazısıGörünür() {
+        ReusableMethods.waitForSecond(1);
         Assert.assertTrue(searchPage.createdVerify.isDisplayed());
+    }
+
+    @And("Schedule a tour bölümünde tarih kısmı boş bırakılır")
+    public void scheduleATourBölümündeTarihKısmıBoşBırakılır() {
+        ReusableMethods.waitForSecond(2);
+    }
+
+    @And("Schedule a tour bölümünde saat kısmı boş bırakılır")
+    public void scheduleATourBölümündeSaatKısmıBoşBırakılır() {
+    }
+
+    @Then("hata mesajları görülmelidir")
+    public void hataMesajlarıGörülmelidir() {
+        Assert.assertTrue(searchPage.tourDateRequiredMassage.isDisplayed());
+        Assert.assertTrue(searchPage.tourTimeRequiredMassage.isDisplayed());
+    }
+
+    @And("sağ üstteki kullanıcı ikonuna tıklanır")
+    public void sağÜsttekiKullanıcıIkonunaTıklanır() {
+        ReusableMethods.waitForSecond(2);
+        searchPage.costumerIcon.click();
+    }
+
+   
+
+    @Then("Oluşturulan randevunun eklendiği görülür")
+    public void oluşturulanRandevununEklendiğiGörülür() {
+        ReusableMethods.waitForSecond(8);
+        Assert.assertTrue(searchPage.myTourVerify.isDisplayed());
+    }
+
+    @And("açılan dropdown da tur isteklerim butonuna tıklanır")
+    public void açılanDropdownDaTurIsteklerimButonunaTıklanır() {
+        searchPage.myTourRequests.click();
+    }
+
+
+    @Then("Status sütununda oluşturulan randevunun durumu görülür")
+    public void statusSütunundaOluşturulanRandevununDurumuGörülür() {
+        Assert.assertNotNull(searchPage.statusVerify.getText());
     }
 }
 

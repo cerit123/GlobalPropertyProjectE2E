@@ -28,7 +28,7 @@ public class hookCostumer {
     @After
     public void tearDown() {
         try {
-            Driver.closeDriver();
+           // Driver.closeDriver();
         } catch (Exception e) {
             System.out.println("Driver kapatma sırasında hata oluştu: " + e.getMessage());
         }
