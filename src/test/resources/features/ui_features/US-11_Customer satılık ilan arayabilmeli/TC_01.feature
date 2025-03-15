@@ -1,8 +1,8 @@
 
-@UI @Costumer @US-10
+@UI @Costumer @US-11
 Feature:
  Scenario Outline: Search kısmından istediği emlağı seçip satılık olarak genel arama yapabilmeli
-   Given search box ın üzerindeki rent butonuna tıklanır
+   Given search box ın üzerindeki sale butonuna tıklanır
    And   search box ın altındaki istenilen "<emlakTürü>" seçilir
 
    And   search butonuna tıklanır

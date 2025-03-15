@@ -18,25 +18,25 @@ public class US3CustomerProfileUpdateStepdefs {
     MyProfilePage myProfilePage = new MyProfilePage();
     HomePage homePage=new HomePage();
 
-    @Given("sayfaya gidilir")
-    public void sayfayaGidilir() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-    }
+//    @Given("sayfaya gidilir")
+//    public void sayfayaGidilir() {
+//        Driver.getDriver().get(ConfigReader.getProperty("url"));
+//    }
 
-    @When("Login sekmesine tiklanir")
-    public void loginSekmesineTiklanir() {
-        loginPage.loginButton.click();
-    }
+//    @When("Login sekmesine tiklanir")
+//    public void loginSekmesineTiklanir() {
+//        loginPage.loginButton.click();
+//    }
 
-    @And("Siteye kaydolunan email adresi girilir")
-    public void siteyeKaydolunanEmailAdresiGirilir() {
-        loginPage.mailButton.sendKeys(ConfigReader.getProperty("emailCostumer"));
-    }
+//    @And("Siteye kaydolunan email adresi girilir")
+//    public void siteyeKaydolunanEmailAdresiGirilir() {
+//        loginPage.mailButton.sendKeys(ConfigReader.getProperty("emailCostumer"));
+//    }
 
-    @And("Kullanici password girilir")
-    public void kullaniciPasswordGirilir() {
-        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("passwordCostumer"));
-    }
+    //@And("Kullanici password girilir")
+    //public void kullaniciPasswordGirilir() {
+        //loginPage.passwordButton.sendKeys(ConfigReader.getProperty("passwordCostumer"));
+    //}
 
     @And("Login butonuna tiklanir")
     public void loginButonunaTiklanir() {

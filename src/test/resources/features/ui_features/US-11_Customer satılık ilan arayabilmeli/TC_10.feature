@@ -1,8 +1,8 @@
 
-@US-10 @Costumer
+@US-11 @Costumer
 Feature:
  Scenario:Randevu isteklerini görebilmeli( pasitive)
-   Given  search box ın üzerindeki rent butonuna tıklanır
+   Given  search box ın üzerindeki sale butonuna tıklanır
    And    search box ın altındaki istenilen emlak seçilir
    And    search butonuna tıklanır
    And    gelen ürünlerden bir tanesi üzerine tıklayarak açılır
