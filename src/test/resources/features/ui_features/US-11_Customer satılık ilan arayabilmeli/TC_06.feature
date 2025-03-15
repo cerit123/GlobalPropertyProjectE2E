@@ -1,8 +1,8 @@
 
-@US-10 @UI @Costumer
+@US-11 @UI @Costumer
 Feature:
  Scenario:Seçtiği emlak ile alakalı resim, Description, DETAILS, LOCATION bilgilerini görebilmeli
-   Given  search box ın üzerindeki rent butonuna tıklanır
+   Given  search box ın üzerindeki sale butonuna tıklanır
    When   search box ın altındaki istenilen emlak seçilir
    And    search butonuna tıklanır
    And    gelen ürünlerden bir tanesi üzerine tıklayarak açılır

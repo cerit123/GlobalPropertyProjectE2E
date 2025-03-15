@@ -1,5 +1,5 @@
 
-@US-10 @UI @Admin
+@US-10 @UI @Costumer
 Feature:
  Scenario:Price Range min box ına negatif değer girldiğinde hata mesajı vemeli (negative)
    Given  search box ın üzerindeki rent butonuna tıklanır
@@ -8,7 +8,7 @@ Feature:
    And    açılan sol pencerede Price Range bölümünde max kutusu boş bırakılır
    And    Advert Type, Category, Country dropdownlarında all seçeneği seçilmelidir
    And    City ve District  dropdownları boş olmalıdır
-   Then   search butonuna tıklanır
+   Then   searchh butonuna tıklanır
    Then   uyarı mesajı görülmelidir
-   Then   sayfa kapatılır
+
 
