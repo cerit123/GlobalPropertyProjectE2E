@@ -25,7 +25,7 @@ public class US10_US11Stepdefs {
     Select  cityDropDown;
     Select  categoryDropDown;
     Select   districtDropDown;
-    @Given("sayfaya gidilir")
+//    @Given("sayfaya gidilir")
   //  public void sayfayaGidilir() {
   //      Driver.getDriver().get("http://64.227.123.49/");
   //  }

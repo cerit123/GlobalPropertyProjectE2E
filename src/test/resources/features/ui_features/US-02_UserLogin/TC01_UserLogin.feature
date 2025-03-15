@@ -6,7 +6,7 @@
       Given sayfaya gidilir
       When Login sekmesine tiklanir
       And Siteye kaydolunan email adresi girilir
-      And Kullanici password girilir
+      And Kullanici passwordu girilir
       And Login sekmesine tiklanir
       Then Login olundugu dogrulanir
 
