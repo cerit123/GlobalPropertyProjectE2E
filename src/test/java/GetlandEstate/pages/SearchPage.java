@@ -68,7 +68,7 @@ public class SearchPage {
     @FindBy(xpath="//select[@id='dist']")
     public WebElement districtDropDown;
 
-    @FindBy(xpath="(//button[@type='button'])[3]")
+    @FindBy(xpath="//button[text()='Search']")
     public WebElement searchButton2;
 
 
@@ -92,6 +92,50 @@ public class SearchPage {
 
     @FindBy(xpath="//h4[text()='LOCATION']")
     public WebElement Location;
+
+    @FindBy(xpath="(//button[@type='button'])[4]")
+    public WebElement contactNumberButton;
+
+    @FindBy(xpath="(//button[@type='button'])[3]")
+    public WebElement contactNumber;
+
+    @FindBy(xpath="(//button[@type='button'])[6]")
+    public WebElement sendMailButton;
+
+    @FindBy(xpath="(//button[@type='button'])[5]")
+    public WebElement sendMail;
+
+    @FindBy(id="tourDate")
+    public WebElement tourDate;
+
+    @FindBy(id="tourTime")
+    public WebElement tourTime;
+
+    @FindBy(xpath="//button[@type='submit']")
+    public WebElement submitTourRequestButton;
+
+    @FindBy(xpath="//span[text()='Created']")
+    public WebElement createdVerify;
+
+    @FindBy(xpath="//div[text()='Tour date is required']")
+    public WebElement tourDateRequiredMassage;
+
+    @FindBy(xpath="//div[text()='Tour time is required']")
+    public WebElement tourTimeRequiredMassage;
+
+    @FindBy(xpath="//div[@class='hero']")
+    public WebElement costumerIcon;
+
+    @FindBy(xpath="(//a[@class='dropdown-item'])[4]")
+    public WebElement myTourRequests;
+
+    @FindBy(xpath="(//tr[@role='row'])[2]")
+    public WebElement myTourVerify;
+
+    @FindBy(xpath="(//span[@data-pc-section='value'])[1]")
+    public WebElement statusVerify;
+
+
 
 
     //yordun be github
