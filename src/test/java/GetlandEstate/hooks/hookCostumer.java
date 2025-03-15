@@ -14,7 +14,7 @@ public class hookCostumer {
     @Before("@Costumer")
     public void setUp() {
         LoginPage loginPage = new LoginPage();
-        HomePage   homePage=new HomePage();
+        HomePage homePage=new HomePage();
 
             Driver.getDriver().get(ConfigReader.getProperty("url"));
             homePage.LoginButton.click();
