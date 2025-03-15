@@ -96,5 +96,25 @@ public class US18stepDefs {
     public void listesindekiGuestGoruntulenebiliyorMuKontrolEdilir(String arg0) {
         Assert.assertTrue(myTourRequestsPage.guest.isDisplayed());
     }
+
+    //TC04
+
+    @And("Soldaki manager menusunden  My Tour Requests sekmesi tiklanir")
+    public void soldakiManagerMenusundenMyTourRequestsSekmesiTiklanir() {
+        homePage.profilButton.click();
+        dashboardPage.tourRequests.click();
+        myTourRequestsPage.myResponses.click();
+
+    }
+
+    @And("My Responsesdaki ilanda silme\\(x) tusuna basar")
+    public void myResponsesdakiIlandaSilmeXTusunaBasar() {
+        myTourRequestsPage.actionDeleteButton.click();
+    }
+
+    @Then("Tour request declined mesajinin gorundugu dogrulanir")
+    public void tourRequestDeclinedMesajininGorunduguDogrulanir() {
+        //Assert.assertTrue(myTourRequestsPage..isDisplayed());
+    }
 }
 
