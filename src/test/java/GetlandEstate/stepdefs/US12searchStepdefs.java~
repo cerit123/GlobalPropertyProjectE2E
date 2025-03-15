@@ -1,0 +1,30 @@
+package GetlandEstate.stepdefs;
+
+import GetlandEstate.pages.HomePage;
+import GetlandEstate.pages.SearchPage;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class US12searchStepdefs {
+
+    SearchPage searchPage = new SearchPage();
+
+    @Given("{string} kismina aranmak istenen emlak yazılır")
+    public void kisminaAranmakIstenenEmlakYazılır(String arg0) {
+
+        searchPage.searchBox.sendKeys("ev");
+
+    }
+
+    @When("Arama butonuna tiklanir")
+    public void aramaButonunaTiklanir() {
+
+        searchPage.searchButton.click();
+    }
+
+    @Then("Ilanlar sayfasının açıldığı doğrulanır.")
+    public void ilanlarSayfasınınAçıldığıDoğrulanır() {
+
+    }
+}

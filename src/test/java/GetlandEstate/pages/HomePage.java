@@ -39,17 +39,32 @@ public class HomePage {
     @FindBy(xpath = "//a[text()='English']")
     public WebElement EnglishLanguageButton;
 
+    @FindBy(xpath = "(//a[text()='Contact'])[1]")
+    public WebElement verifyEnglishLanguage;
+
      @FindBy(xpath = "//a[text()='Türkçe']")
     public WebElement TürkçeLanguageButton;
+
+     @FindBy(xpath = "//a[text()='İletişim']")
+    public WebElement verifyTurkishLanguage;
 
      @FindBy(xpath = "//a[text()='Français']")
     public WebElement FrançaisLanguageButton;
 
+     @FindBy(xpath = "//a[text()='À propos']")
+    public WebElement verifyFrançaisLanguage;
+
      @FindBy(xpath = "//a[text()='Deutsch']")
     public WebElement DeutschLanguageButton;
 
+     @FindBy(xpath = "//a[text()='Kontakt']")
+    public WebElement verifyDeutschLanguage;
+
      @FindBy(xpath = "//a[text()='Español']")
     public WebElement EspañolLanguageButton;
+
+     @FindBy(xpath = "(//a[text()='Contacto'])[1]")
+    public WebElement verifyEspañolLanguage;
 
 
 

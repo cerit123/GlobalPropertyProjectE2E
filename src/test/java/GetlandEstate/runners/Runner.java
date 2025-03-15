@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
 
-       glue = {"GetlandEstate/stepdefs"},
-        tags = "@US-17",
+        glue = {"GetlandEstate/stepdefs"},
+        tags = "@US-12",
 
 
         dryRun = false

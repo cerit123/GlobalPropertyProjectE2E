@@ -71,7 +71,7 @@ public class US12SearchAbleStepdefsA {
 
     @And("Price Range bolumunde bulunan Min box bolumune gecersiz bir data girilir.")
     public void priceRangeBolumundeBulunanMinBoxBolumuneGecersizBirDataGirilir() {
-
+        
     }
 
     @Then("Search arama butonuna tiklandiginda uyari vermelidir.")
