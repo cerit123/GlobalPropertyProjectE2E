@@ -3,10 +3,10 @@
 
     Scenario: Kullanici siteye kayit oldugu email adresiyle login yapabilmelidir
 
-      Given Siteye gidilir
+      Given sayfaya gidilir
       When Login sekmesine tiklanir
       And Siteye kaydolunan email adresi girilir
       And Kullanici password girilir
       And Login sekmesine tiklanir
-      Then Kullanicinin profilini gorebildigi dogrulanir
+      Then Login olundugu dogrulanir
 

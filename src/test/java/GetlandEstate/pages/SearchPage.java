@@ -106,10 +106,13 @@ public class SearchPage {
     public WebElement tourDate;
 
 @FindBy(id="tourTime")
-    public WebElement tourTime;
+public List<WebElement> tourTime;
 
 @FindBy(xpath="//button[@type='submit']")
-    public WebElement SubmitTourRequestButton;
+    public WebElement submitTourRequestButton;
+
+@FindBy(xpath="//span[text()='Created']")
+    public WebElement createdVerify;
 
 
 

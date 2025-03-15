@@ -1,5 +1,5 @@
 
-@US-10 @UI
+@US-10m @UI
 Feature:
  Scenario:Price Range, Advert Type, Category, Country, City, District bölümlerini girerek özel arama yapabilmeli(positive)
    Given  search box ın üzerindeki rent butonuna tıklanır

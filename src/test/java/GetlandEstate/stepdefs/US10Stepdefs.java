@@ -2,6 +2,7 @@ package GetlandEstate.stepdefs;
 
 import GetlandEstate.pages.SearchPage;
 import GetlandEstate.utilities.*;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,10 +15,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class US10Stepdefs {
 
     SearchPage searchPage= new SearchPage();
+    Faker faker;
     Select advertTypeDropDown;
     Select  countryDropDown;
     Select  cityDropDown;
@@ -222,19 +225,29 @@ advertTypeDropDown.selectByValue("1");
 
     @And("Schedule a tour bölümünde geçerli geçerli bir tarih seçilir")
     public void scheduleATourBölümündeGeçerliGeçerliBirTarihSeçilir() {
-        searchPage.tourDate.sendKeys();
+        faker = new Faker();
+        searchPage.tourDate.sendKeys(faker.date().future(30, TimeUnit.DAYS).toString());
     }
 
     @And("Schedule a tour bölümünde geçerli geçerli bir saat seçilir")
     public void scheduleATourBölümündeGeçerliGeçerliBirSaatSeçilir() {
+        if (!searchPage.propertiesList.isEmpty()) {
+            Random random = new Random();
+            int randomIndex = random.nextInt(searchPage.tourTime.size());
+            searchPage.tourTime.get(randomIndex).click();
+        } else {
+            throw new RuntimeException("No property images found!");
+        }
     }
 
     @And("Submit a tour request butonuna basılır")
     public void submitATourRequestButonunaBasılır() {
+        searchPage.submitTourRequestButton.click();
     }
 
     @Then("TourRequest created successfully yazısı görünür")
     public void tourrequestCreatedSuccessfullyYazısıGörünür() {
+        Assert.assertTrue(searchPage.createdVerify.isDisplayed());
     }
 }
 

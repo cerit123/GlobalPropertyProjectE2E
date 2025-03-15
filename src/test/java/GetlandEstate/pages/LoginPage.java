@@ -20,9 +20,14 @@ public class LoginPage {
     public WebElement passwordButton;
 
 
-
     @FindBy(xpath = "//div[@class='form-submit-button']")
     public WebElement login;
+
+    @FindBy(xpath = " //div[contains(text(),'Invalid email')]")
+    public WebElement invalidEmailMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'Password is required')]")
+    public WebElement passwordRequiredMessage;
 
 
 }
