@@ -24,12 +24,12 @@ public class US2UserLoginStepdefs {
 
     @And("Siteye kaydolunan email adresi girilir")
     public void siteyeKaydolunanEmailAdresiGirilir() {
-        loginPage.mailButton.sendKeys("bugboy@gmail.com");
+        loginPage.mailButton.sendKeys(ConfigReader.getProperty("Costumeremail"));
     }
 
     @And("Kullanici password girilir")
     public void kullaniciPasswordGirilir() {
-        loginPage.passwordButton.sendKeys("Ppbugboy38!!");
+        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("Costumerpassword"));
     }
 
     @Then("Login olundugu dogrulanir")
@@ -41,7 +41,7 @@ public class US2UserLoginStepdefs {
 
     @And("Email adresi @ sembolu olmadan girilir")
     public void emailAdresiEksikGirilir() {
-        loginPage.mailButton.sendKeys("bugboygmail.com");
+        loginPage.mailButton.sendKeys(ConfigReader.getProperty("bugboygmail.com"));
     }
 
     @Then("Siteye giris yapilamadigi dogrulanir")
