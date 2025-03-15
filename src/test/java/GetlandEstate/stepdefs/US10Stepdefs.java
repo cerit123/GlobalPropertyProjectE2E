@@ -1,28 +1,32 @@
 package GetlandEstate.stepdefs;
 
 import GetlandEstate.pages.SearchPage;
-import GetlandEstate.utilities.ConfigReader;
-import GetlandEstate.utilities.Driver;
-import GetlandEstate.utilities.ReusableMethods;
+import GetlandEstate.utilities.*;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class US10Stepdefs {
 
     SearchPage searchPage= new SearchPage();
-   // Select advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
- //  Select countryDropDown=new Select(searchPage.countryDropDown);
- //  Select cityDropDown=new Select(searchPage.cityDropDown);
- //  Select categoryDropDown=new Select(searchPage.categoryDropDown);
- //  Select districtDropDown=new Select(searchPage.districtDropDown);
-  //  @Given("sayfaya gidilir")
+    Faker faker;
+    Select advertTypeDropDown;
+    Select  countryDropDown;
+    Select  cityDropDown;
+    Select  categoryDropDown;
+    Select   districtDropDown;
+    @Given("sayfaya gidilir")
   //  public void sayfayaGidilir() {
   //      Driver.getDriver().get("http://64.227.123.49/");
   //  }
@@ -40,23 +44,26 @@ public class US10Stepdefs {
 
     @And("search butonuna tıklanır")
     public void searchButonunaTıklanır() {
+        ReusableMethods.visibleWait(searchPage.searchButton,30);
         searchPage.searchButton.click();
     }
 
     @And("açılan pencerede seçilen ürünün geldiği görünür")
     public void açılanPenceredeSeçilenÜrününGeldiğiGörünür() {
+
         Assert.assertTrue(searchPage.totalFoundText.isDisplayed());
     }
 
-    @Then("sayfa kapatılır")
-    public void sayfaKapatılır() {
-        Driver.closeDriver();
-    }
+  //  @Then("sayfa kapatılır")
+  //  public void sayfaKapatılır() {
+  //      Driver.closeDriver();
+  //  }
 
 
 
     @And("açılan sol pencerede Price Range bölümünde min kutusuna geçerli bir data girilir")
     public void açılanSolPenceredePriceRangeBölümündeMinKutusunaGeçerliBirDataGirilir() {
+      Driver.getDriver().navigate().refresh();
         searchPage.minPriceRange.sendKeys("100");
     }
 
@@ -68,25 +75,39 @@ public class US10Stepdefs {
 
     @And("Advert Type, Category, dropdownlarında all seçeneği seçilir")
     public void advertTypeCategoryDropdownlarındaAllSeçeneğiSeçilir() {
-        ReusableMethods.ddmValue(searchPage.advertTypeDropDown,"All");
-        ReusableMethods.ddmValue(searchPage.categoryDropDown,"All");
+       WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+       wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='at']/option[text()='All']")));
 
+      ActionsUtils.scrollDown();
+
+
+       advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
+      ReusableMethods.waitForSecond(1);
+       advertTypeDropDown.selectByVisibleText("All");
+
+
+       categoryDropDown=new Select(searchPage.categoryDropDown);
+       categoryDropDown.selectByVisibleText("All");
     }
 
     @And("Country,City,District  dropdown ından herhangi bir seçenek seçilir")
     public void countryCityDistrictDropdownIndanHerhangiBirSeçenekSeçilir() {
-       ReusableMethods.ddmValue(searchPage.countryDropDown,"All");
+
 
     }
 
     @Then("arama sonucunun başarılı olduğu görülür")
     public void aramaSonucununBaşarılıOlduğuGörülür() {
+        ReusableMethods.visibleWait(searchPage.totalFoundText,5);
+        ActionsUtils.scrollHome();
+
         Assert.assertTrue(searchPage.totalFoundText.isDisplayed());
     }
 
 
     @And("açılan sol pencerede Price Range bölümünde min kutusuna negatif değer yazılır")
     public void açılanSolPenceredePriceRangeBölümündeMinKutusunaNegatifDeğerYazılır() {
+        Driver.getDriver().navigate().refresh();
         searchPage.minPriceRange.sendKeys("-100");
     }
 
@@ -96,9 +117,19 @@ public class US10Stepdefs {
 
     @And("Advert Type, Category, Country dropdownlarında all seçeneği seçilmelidir")
     public void advertTypeCategoryCountryDropdownlarındaAllSeçeneğiSeçilmelidir() {
-        ReusableMethods.ddmValue(searchPage.advertTypeDropDown,"All");
-        ReusableMethods.ddmValue(searchPage.categoryDropDown,"All");
-        ReusableMethods.ddmValue(searchPage.countryDropDown,"All");
+
+        JSUtils.JSscrollIntoView(searchPage.advertTypeDropDown);
+        advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
+advertTypeDropDown.selectByValue("1");
+
+        JSUtils.JSscrollIntoView(searchPage.categoryDropDown);
+        categoryDropDown=new Select(searchPage.categoryDropDown);
+       categoryDropDown.selectByVisibleText("All");
+
+
+        JSUtils.JSscrollIntoView(searchPage.countryDropDown);
+        countryDropDown=new Select(searchPage.countryDropDown);
+        countryDropDown.selectByVisibleText("All");
 
     }
 
@@ -108,11 +139,13 @@ public class US10Stepdefs {
 
     @Then("uyarı mesajı görülmelidir")
     public void uyarıMesajıGörülmelidir() {
+        ReusableMethods.waitForSecond(1);
         Assert.assertTrue(searchPage.errorMassage.isDisplayed());
     }
 
     @And("açılan sol pencerede Price Range bölümünde min kutusuna bir değer girilir")
     public void açılanSolPenceredePriceRangeBölümündeMinKutusunaBirDeğerGirilir() {
+       Driver.getDriver().navigate().refresh();
         searchPage.minPriceRange.sendKeys("100");
     }
 
@@ -129,6 +162,8 @@ public class US10Stepdefs {
 
     @And("gelen ürünlerden bir tanesi üzerine tıklayarak açılır")
     public void gelenÜrünlerdenBirTanesiÜzerineTıklayarakAçılır() {
+      Driver.getDriver().navigate().refresh();
+
         if (!searchPage.propertiesList.isEmpty()) {
             Random random = new Random();
             int randomIndex = random.nextInt(searchPage.propertiesList.size());
@@ -158,4 +193,106 @@ public class US10Stepdefs {
     public void açılanÜrünSayfasındaResimBilgileriGörünür() {
         Assert.assertTrue(searchPage.image.isDisplayed());
     }
+
+
+    @Then("searchh butonuna tıklanır")
+    public void searchhButonunaTıklanır() {
+        ActionsUtils.scrollDown();
+        ReusableMethods.waitForSecond(30);
+      // WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+      // WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(searchPage.searchButton2));
+        searchPage.searchButton2.click();
+    }
+
+    @And("contact number kutusundan görünürlüğü açılır")
+    public void contactNumberKutusundanGörünürlüğüAçılır() {
+        WaitUtils.waitFor(2);
+        searchPage.contactNumberButton.click();
+    }
+
+    @Then("send mail kutusundan görünürlüğü açılır")
+    public void sendMailKutusundanGörünürlüğüAçılır() {
+        searchPage.sendMailButton.click();
+    }
+
+    @Then("contact number ve mail görünür olur")
+    public void contactNumberVeMailGörünürOlur() {
+
+        Assert.assertTrue(searchPage.sendMail.isDisplayed());
+        Assert.assertTrue(searchPage.contactNumber.isDisplayed());
+    }
+
+
+    @And("Schedule a tour bölümünde geçerli geçerli bir tarih seçilir")
+    public void scheduleATourBölümündeGeçerliGeçerliBirTarihSeçilir() {
+        faker = new Faker();
+        searchPage.tourDate.sendKeys("15.12.2026", Keys.TAB, Keys.TAB);
+    }
+
+    @And("Schedule a tour bölümünde geçerli geçerli bir saat seçilir")
+    public void scheduleATourBölümündeGeçerliGeçerliBirSaatSeçilir() {
+        Select select = new Select(searchPage.tourTime);
+
+        // Mevcut tüm saatleri al
+        List<WebElement> options = select.getOptions();
+        Random random = new Random();
+        int randomIndex = random.nextInt(options.size());
+        select.selectByIndex(randomIndex);
+
+       // ReusableMethods.ddmValue(searchPage.tourTime,"11:00");
+    }
+
+    @And("Submit a tour request butonuna basılır")
+    public void submitATourRequestButonunaBasılır() {
+        searchPage.submitTourRequestButton.click();
+    }
+
+    @Then("TourRequest created successfully yazısı görünür")
+    public void tourrequestCreatedSuccessfullyYazısıGörünür() {
+        ReusableMethods.waitForSecond(1);
+        Assert.assertTrue(searchPage.createdVerify.isDisplayed());
+    }
+
+    @And("Schedule a tour bölümünde tarih kısmı boş bırakılır")
+    public void scheduleATourBölümündeTarihKısmıBoşBırakılır() {
+        ReusableMethods.waitForSecond(2);
+    }
+
+    @And("Schedule a tour bölümünde saat kısmı boş bırakılır")
+    public void scheduleATourBölümündeSaatKısmıBoşBırakılır() {
+    }
+
+    @Then("hata mesajları görülmelidir")
+    public void hataMesajlarıGörülmelidir() {
+        Assert.assertTrue(searchPage.tourDateRequiredMassage.isDisplayed());
+        Assert.assertTrue(searchPage.tourTimeRequiredMassage.isDisplayed());
+    }
+
+    @And("sağ üstteki kullanıcı ikonuna tıklanır")
+    public void sağÜsttekiKullanıcıIkonunaTıklanır() {
+        ReusableMethods.waitForSecond(2);
+        searchPage.costumerIcon.click();
+    }
+
+   
+
+    @Then("Oluşturulan randevunun eklendiği görülür")
+    public void oluşturulanRandevununEklendiğiGörülür() {
+        ReusableMethods.waitForSecond(8);
+        Assert.assertTrue(searchPage.myTourVerify.isDisplayed());
+    }
+
+    @And("açılan dropdown da tur isteklerim butonuna tıklanır")
+    public void açılanDropdownDaTurIsteklerimButonunaTıklanır() {
+        searchPage.myTourRequests.click();
+    }
+
+
+    @Then("Status sütununda oluşturulan randevunun durumu görülür")
+    public void statusSütunundaOluşturulanRandevununDurumuGörülür() {
+        Assert.assertNotNull(searchPage.statusVerify.getText());
+    }
 }
+
+
+
