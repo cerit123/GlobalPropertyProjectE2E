@@ -1,5 +1,6 @@
 package GetlandEstate.hooks;
 
+
 import GetlandEstate.pages.HomePage;
 import GetlandEstate.pages.LoginPage;
 import GetlandEstate.utilities.ConfigReader;
@@ -14,7 +15,7 @@ public class hookManager {
     @Before("@Manager")
     public static void setUp() {
         LoginPage loginPage = new LoginPage();
-        HomePage   homePage=new HomePage();
+        HomePage homePage=new HomePage();
 
             Driver.getDriver().get(ConfigReader.getProperty("url"));
             homePage.LoginButton.click();
