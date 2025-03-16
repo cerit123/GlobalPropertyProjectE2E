@@ -10,13 +10,13 @@ import org.junit.runner.RunWith;
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
-                "rerun:TestOutput/failed_scenario.txt",
+
 
         },
         features = "src/test/resources/features",
 
         glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
-        tags = "@US-11f",
+        tags = "@US-11",
         dryRun = false
 )
 public class Runner {

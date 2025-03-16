@@ -237,7 +237,7 @@ public class US10_US11Stepdefs {
     public void scheduleATourBölümündeGeçerliGeçerliBirSaatSeçilir() {
         Select select = new Select(searchPage.tourTime);
 
-        // Mevcut tüm saatleri al
+
         List<WebElement> options = select.getOptions();
         Random random = new Random();
         int randomIndex = random.nextInt(options.size());
