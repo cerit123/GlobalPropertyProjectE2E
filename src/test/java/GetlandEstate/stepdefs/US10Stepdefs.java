@@ -3,10 +3,10 @@ package GetlandEstate.stepdefs;
 import GetlandEstate.pages.SearchPage;
 import GetlandEstate.utilities.ConfigReader;
 import GetlandEstate.utilities.Driver;
-<<<<<<< HEAD
-=======
+
+
 import GetlandEstate.utilities.ReusableMethods;
->>>>>>> master
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,32 +14,34 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-<<<<<<< HEAD
 
-public class US10Stepdefs {
-    SearchPage searchPage= new SearchPage();
-    Select advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
-    Select countryDropDown=new Select(searchPage.countryDropDown);
-    Select cityDropDown=new Select(searchPage.cityDropDown);
-    Select categoryDropDown=new Select(searchPage.categoryDropDown);
-    Select districtDropDown=new Select(searchPage.districtDropDown);
-    @Given("sayfaya gidilir")
-    public void sayfayaGidilir() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-    }
 
-    @Given("search box ın üzerindeki rent butonuna tıklanır")
-    public void searchBoxInÜzerindekiRentButonunaTıklanır() {
-        searchPage.rentButton.click();
-    }
 
-=======
+
+
+
 
 import java.util.Random;
 
 public class US10Stepdefs {
 
     SearchPage searchPage= new SearchPage();
+    Select advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
+    Select countryDropDown=new Select(searchPage.countryDropDown);
+    Select cityDropDown=new Select(searchPage.cityDropDown);
+    Select categoryDropDown=new Select(searchPage.categoryDropDown);
+    Select districtDropDown=new Select(searchPage.districtDropDown);
+    /*@Given("sayfaya gidilir")
+    public void sayfayaGidilir() {
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+    }*/
+
+    /*@Given("search box ın üzerindeki rent butonuna tıklanır")
+    public void searchBoxInÜzerindekiRentButonunaTıklanır() {
+        searchPage.rentButton.click();
+    }*/
+
+    //SearchPage searchPage= new SearchPage();
    // Select advertTypeDropDown=new Select(searchPage.advertTypeDropDown);
  //  Select countryDropDown=new Select(searchPage.countryDropDown);
  //  Select cityDropDown=new Select(searchPage.cityDropDown);
@@ -55,7 +57,7 @@ public class US10Stepdefs {
         searchPage.rentButton.click();
     }
 
->>>>>>> master
+
     @And("search box ın altındaki istenilen {string} seçilir")
     public void searchBoxInAltındakiIstenilenSeçilir(String emlaktürü) {
         WebElement propertyButton = Driver.getDriver().findElement(By.xpath("//button[contains(text(), '" + emlaktürü + "')]"));
@@ -92,23 +94,23 @@ public class US10Stepdefs {
 
     @And("Advert Type, Category, dropdownlarında all seçeneği seçilir")
     public void advertTypeCategoryDropdownlarındaAllSeçeneğiSeçilir() {
-<<<<<<< HEAD
+
      advertTypeDropDown.selectByVisibleText("All");
      categoryDropDown.selectByVisibleText("All");
-=======
+
         ReusableMethods.ddmValue(searchPage.advertTypeDropDown,"All");
         ReusableMethods.ddmValue(searchPage.categoryDropDown,"All");
->>>>>>> master
+
 
     }
 
     @And("Country,City,District  dropdown ından herhangi bir seçenek seçilir")
     public void countryCityDistrictDropdownIndanHerhangiBirSeçenekSeçilir() {
-<<<<<<< HEAD
+
         countryDropDown.selectByVisibleText("All");
-=======
+
        ReusableMethods.ddmValue(searchPage.countryDropDown,"All");
->>>>>>> master
+
 
     }
 
@@ -129,16 +131,16 @@ public class US10Stepdefs {
 
     @And("Advert Type, Category, Country dropdownlarında all seçeneği seçilmelidir")
     public void advertTypeCategoryCountryDropdownlarındaAllSeçeneğiSeçilmelidir() {
-<<<<<<< HEAD
+
         advertTypeDropDown.selectByVisibleText("All");
         categoryDropDown.selectByVisibleText("All");
         countryDropDown.selectByVisibleText("All");
-=======
+
         ReusableMethods.ddmValue(searchPage.advertTypeDropDown,"All");
         ReusableMethods.ddmValue(searchPage.categoryDropDown,"All");
         ReusableMethods.ddmValue(searchPage.countryDropDown,"All");
 
->>>>>>> master
+
     }
 
     @And("City ve District  dropdownları boş olmalıdır")
@@ -148,8 +150,8 @@ public class US10Stepdefs {
     @Then("uyarı mesajı görülmelidir")
     public void uyarıMesajıGörülmelidir() {
         Assert.assertTrue(searchPage.errorMassage.isDisplayed());
-<<<<<<< HEAD
-=======
+
+
     }
 
     @And("açılan sol pencerede Price Range bölümünde min kutusuna bir değer girilir")
@@ -198,6 +200,6 @@ public class US10Stepdefs {
     @And("açılan ürün sayfasında resim bilgileri görünür")
     public void açılanÜrünSayfasındaResimBilgileriGörünür() {
         Assert.assertTrue(searchPage.image.isDisplayed());
->>>>>>> master
+
     }
 }
