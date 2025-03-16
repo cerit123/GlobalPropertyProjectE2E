@@ -1,7 +1,18 @@
-@US12
-  Feature: Search Rent SaleAble
-    Scenario: Search Rent SaleAble
-      Given Siteye gidilir
-      When "Search" kismina aranmak istenen emlak yazılır
-      And Arama butonuna tiklanir
-      Then İlanlar sayfasının açıldığı doğrulanır.
+@US-12
+  Feature:
+    Scenario Outline: Kayit islemi yapilmadan rent ve sale arama yapibilmelidir.
+      Given Siteye gidilir.
+      When Search kisminda bulunan Rent butonuna tiklanir
+      And search box ın altındaki emlak "<emlakTürleri>" seçilir
+      And search butonuna tiklanir
+      Then acilan pencerede seçilen emlakın geldigi gorunur
+      Then sayfa kapatilir.
+
+      Examples:
+        | emlakTürleri |
+        | HOUSE        |
+        | APARTMENT    |
+        | OFFICE       |
+        | VILLA        |
+        | LAND         |
+        | SHOP         |
