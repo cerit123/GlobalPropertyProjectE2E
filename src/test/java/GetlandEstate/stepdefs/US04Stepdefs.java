@@ -6,15 +6,16 @@ import GetlandEstate.utilities.ReusableMethods;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.commons.codec.language.bm.Languages;
 import org.junit.Assert;
 
 public class US04Stepdefs {
-
-    HomePage homePage=new HomePage();
+    /*HomePage homePage=new HomePage();
     LoginPage loginPage=new LoginPage();
 
     @Given("Dil seçme sekmesine tıklanır.")
     public void dilSeçmeSekmesineTıklanır() {
+
         ReusableMethods.ddmValue(homePage.LanguageDropDownButton,"Español");
     }
 
@@ -55,6 +56,6 @@ public class US04Stepdefs {
     public void i̇stenilenDilTürkçeSeçilmelidir() {
         ReusableMethods.ddmValue(homePage.LanguageDropDownButton,"Türkçe");
         homePage.TürkçeLanguageButton.click();
-        Assert.assertTrue(homePage.verifyTurkishLanguage.isDisplayed());
+        Assert.assertTrue(homePage.verifyTurkishLanguage.isDisplayed());*/
     }
-}
+

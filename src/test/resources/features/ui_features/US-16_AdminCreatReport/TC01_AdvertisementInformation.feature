@@ -1,11 +1,12 @@
-@US-16@UI
+@US-16
+@UI
+@Admin
 
 Feature:US-16_Admin Creat Report test
 
   Scenario:Admin İlanların; start date, end date, category, advert type ve status bilgilerine göre rapor oluşturabilmeli
-    Given  Siteye gidilir
-    When Admin olarak giris yapilir
-    And Rapor butonuna tiklanir
+
+    Given Rapor butonuna tiklanir
     And Start date kismina gecerli veri girilir
     And End date kismina gecerli veri girilir
     And Category kismina gecerli veri girilir
@@ -13,6 +14,7 @@ Feature:US-16_Admin Creat Report test
     And Status kismina gecerli veri girilir
     And Rapor olustur butonuna tiklanir
     Then Rapor basariyla olustugu gosterilir
+    And logout butonuna tiklanir
     And Sayfa kapatilir
 
 
