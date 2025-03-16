@@ -12,27 +12,13 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
 
 
-
-       glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
-
-        tags = "@US-04",
-
-        dryRun = true
-
-
         },
         features = "src/test/resources/features",
 
         glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-        tags = "@US09",
-=======
-        tags = "@US20",
->>>>>>> Stashed changes
-=======
+
         tags = "@US-11",
->>>>>>> master
+
         dryRun = false
 
 )
