@@ -1,14 +1,13 @@
-@US-16
+@US-16@Admin
   Feature: US-16_AdminCreatReport test
     Scenario:Populer ilanlarin raporunu olusturabilmelidir
-      Given  Siteye gidilir
-      When Profile tiklanir
-      And Kontrol Paneline tiklanir
-      And Raporlar sayfasina gidilir
-      And Rapor butonuna tiklanir
+
+
+      Given Rapor butonuna tiklanir
       And  En Populer ilanlar kisminda miktar kismi secilir
       And Rapor olustur butonuna tiklanir
-      Then  Rapor basariyla olustugu gosterilir
+      Then  Rapor  populer ilanlar raporu basariyla olustugu gosterilir
+      And logout butonuna tiklanir
       And Sayfa kapatilir
 
 

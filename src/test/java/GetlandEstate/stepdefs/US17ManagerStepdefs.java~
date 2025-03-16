@@ -101,7 +101,7 @@ public class US17ManagerStepdefs {
     @Then("Manager olarak  Rapor basariyla olustugu gosterilir")
     public void managerOlarakRaporBasariylaOlustuguGosterilir() {
         Assert.assertFalse(adminManagerRaporPage.reportVerfy.isDisplayed());
-        WaitUtils.waitFor(5);
+        //WaitUtils.waitFor(5);
     }
 
     //TC-3----------------------------------

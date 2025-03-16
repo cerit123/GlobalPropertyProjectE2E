@@ -13,6 +13,7 @@ Feature: US-16_AdminCreatReport test
     And Status kismi secilir
     And Raporu Olustur butonuna tiklanir
     Then Raporun basariyla olusturulmadigi ve hata mesaji alindigi gorulur
+    And logout butonuna tiklanir
     And Sayfa kapatilir
 
 
