@@ -9,8 +9,7 @@ Feature: US09 Admin girilen ilanları aktif edebilmeli, reddedebilmeli, güncell
   @US09TC01
 
   Scenario: Admin, girilen ilanları aktif edebilmeli.
-    Given Siteye gidilir
-    When Admin olarak giris yapilir
+
     And Back to site butonuna tiklanir
     And Profil Butonuna tiklanir
     And My Adverts sekmesine tiklanir
@@ -24,8 +23,7 @@ Feature: US09 Admin girilen ilanları aktif edebilmeli, reddedebilmeli, güncell
   @US09TC02
 
   Scenario: Admin, girilen ilanları reddedebilmeli.
-    Given Siteye gidilir
-    When Admin olarak giris yapilir
+
     And Back to site butonuna tiklanir
     And Profil Butonuna tiklanir
     And My Adverts sekmesine tiklanir
@@ -38,8 +36,7 @@ Feature: US09 Admin girilen ilanları aktif edebilmeli, reddedebilmeli, güncell
   @US09TC03
 
   Scenario: Admin, ilanları güncelleyebilmeli.
-    Given Siteye gidilir
-    When Admin olarak giris yapilir
+
     And Back to site butonuna tiklanir
     And Profil Butonuna tiklanir
     And My Adverts sekmesine tiklanir

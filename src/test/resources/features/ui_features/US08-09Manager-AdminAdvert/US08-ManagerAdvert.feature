@@ -8,8 +8,7 @@ Feature: US08 Manager verdiği ilanları görebilmeli, güncelleyebilmeli ve sil
   @US08TC01
 
   Scenario: Manager, ilanları güncelleyebilmeli.
-    Given Siteye gidilir
-    When Manager olarak giris yapilir
+
     And Back to site butonuna tiklanir
     And Profil Butonuna tiklanir
     And My Adverts sekmesine tiklanir
@@ -33,8 +32,7 @@ Feature: US08 Manager verdiği ilanları görebilmeli, güncelleyebilmeli ve sil
   @US08TC02
 
   Scenario: Manager, verdiği ilanları silebilmeli..
-    Given Siteye gidilir
-    When Manager olarak giris yapilir
+
     And Back to site butonuna tiklanir
     And Profil Butonuna tiklanir
     And My Adverts sekmesine tiklanir
@@ -46,8 +44,7 @@ Feature: US08 Manager verdiği ilanları görebilmeli, güncelleyebilmeli ve sil
   @US-04NegativeTest
   Scenario: Manager, ilan güncelleme sırasında zorunlu alanları boş bıraktığında uyarı mesajı almalı.
 
-    Given Siteye gidilir
-    When Manager olarak giris yapilir
+
     And Back to site butonuna tiklanir
     And Profil Butonuna tiklanir
     And My Adverts sekmesine tiklanir

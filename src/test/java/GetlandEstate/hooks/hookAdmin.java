@@ -1,12 +1,17 @@
 package GetlandEstate.hooks;
 
+
 import GetlandEstate.pages.HomePage;
 import GetlandEstate.pages.LoginPage;
 import GetlandEstate.utilities.ConfigReader;
 import GetlandEstate.utilities.Driver;
 import GetlandEstate.utilities.WaitUtils;
 import io.cucumber.java.Before;
-import org.junit.After;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 
 public class hookAdmin {
 
@@ -14,7 +19,7 @@ public class hookAdmin {
     @Before("@Admin")
     public void setUp() {
         LoginPage loginPage = new LoginPage();
-        HomePage   homePage=new HomePage();
+        HomePage homePage=new HomePage();
 
             Driver.getDriver().get(ConfigReader.getProperty("url"));
 
@@ -26,8 +31,16 @@ public class hookAdmin {
         WaitUtils.waitFor(2);
     }
 
+
+
     @After
-    public void tearDown() {
+    public void tearDown(Scenario scenario) throws Exception {
+
+        if (scenario.isFailed()) {
+            TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+            scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/png", "scenario" + scenario.getName());
+            Driver.closeDriver();
+        }
         try {
             Driver.closeDriver();
         } catch (Exception e) {
