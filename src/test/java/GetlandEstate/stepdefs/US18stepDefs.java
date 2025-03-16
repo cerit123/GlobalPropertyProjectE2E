@@ -124,6 +124,7 @@ public class US18stepDefs {
 
     @And("My Responsesdaki ilanda onay tusuna basar")
     public void myResponsesdakiIlandaOnayTusunaBasar() {
+
         myTourRequestsPage.approveAction.click();
     }
 
