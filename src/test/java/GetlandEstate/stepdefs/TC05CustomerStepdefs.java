@@ -1,6 +1,8 @@
 package GetlandEstate.stepdefs;
 
+import GetlandEstate.pages.AdminManagerRaporPage;
 import GetlandEstate.pages.LoginPage;
+import GetlandEstate.pages.UsersPage;
 import GetlandEstate.utilities.ConfigReader;
 import GetlandEstate.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -11,12 +13,8 @@ import org.junit.Assert;
 
 public class TC05CustomerStepdefs {
     LoginPage loginPage = new LoginPage();
-
-//    @Given("sayfaya gidilir")
-//    public void sayfayaGidilir() {
-//
-//        Driver.getDriver().get(ConfigReader.getProperty("url"));
-//    }
+    UsersPage userpage = new UsersPage();
+    AdminManagerRaporPage admin = new AdminManagerRaporPage();
 
     @When("Login sekmesine tiklanir")
     public void loginSekmesineTiklanir() {
@@ -31,6 +29,7 @@ public class TC05CustomerStepdefs {
 
     @And("Kullanici password girilir")
     public void kullaniciPasswordGirilir() {
+
         loginPage.passwordButton.sendKeys("admin123!");
     }
 
@@ -45,22 +44,33 @@ public class TC05CustomerStepdefs {
     }
 
     // TC_02 ---------
+
     @And("Kullanıcı sekmesine tıklanır")
     public void kullanıcıSekmesineTıklanır() {
+
+        userpage.users.click();
     }
 
     @Then("Oluşturulan kullanıcı bilgileri görülebilmeli")
     public void oluşturulanKullanıcıBilgileriGörülebilmeli() {
+
+        //Assert.assertTrue(userpage..isDisplayed());
+
     }
 
     // TC_03 ----------
 
     @And("Rol seçme sekmesine tıklanır")
     public void rolSeçmeSekmesineTıklanır() {
+
+        userpage.usersPageRole.click();
     }
 
     @Then("\"Customer roli seçilerek atanır")
-    public void customerRoliSeçilerekAtanır() throws Throwable {    // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
+    public void customerRoliSeçilerekAtanır() throws Throwable {
+        userpage.rolesCustomer.click();
+
+        // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
     }
     // TC_04 -------------
 
@@ -72,20 +82,29 @@ public class TC05CustomerStepdefs {
     public void güncelemeYapıldığıDoğrulanır() {
     }
 
-
+    // TC_05 ---------
     @And("Delete sekmesine tıklanılır")
     public void deleteSekmesineTıklanılır() {
+
+        userpage.deleteButton.click();
     }
 
     @Then("Oluşturulan kullanıcı silinebilir olmalı")
     public void oluşturulanKullanıcıSilinebilirOlmalı() {
+
+        //Assert.assertTrue(userpage..isDisplayed());
+
     }
 
-
+    // TC_06 ---------
     @Then("\"Admin rolu atamaya izin vermiyor")
-    public void adminRoluAtamayaIzinVermiyor() throws Throwable {    // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
-    }
+    public void adminRoluAtamayaIzinVermiyor() throws Throwable {
 
+        userpage.rolesAdmin.click();
+
+        // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
+    }
+     // TC_07 -------
     @Then("\"Manager rolu atamaya izin vermiyor")
     public void managerRoluAtamayaIzinVermiyor() throws Throwable {    // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
     }

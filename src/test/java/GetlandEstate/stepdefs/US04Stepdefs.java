@@ -10,13 +10,13 @@ import org.apache.commons.codec.language.bm.Languages;
 import org.junit.Assert;
 
 public class US04Stepdefs {
-    /*HomePage homePage=new HomePage();
-    LoginPage loginPage=new LoginPage();
+    HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
 
     @Given("Dil seçme sekmesine tıklanır.")
     public void dilSeçmeSekmesineTıklanır() {
 
-        ReusableMethods.ddmValue(homePage.LanguageDropDownButton,"Español");
+        ReusableMethods.ddmValue(homePage.LanguageDropDownButton, "Español");
     }
 
     @When("İstenilen dil İspanyolca seçilmelidir.")
@@ -33,29 +33,30 @@ public class US04Stepdefs {
 
     @When("İstenilen dil Fransızca seçilmelidir.")
     public void i̇stenilenDilFransızcaSeçilmelidir() {
-        ReusableMethods.ddmValue(homePage.LanguageDropDownButton,"Français");
+        ReusableMethods.ddmValue(homePage.LanguageDropDownButton, "Français");
         homePage.FrançaisLanguageButton.click();
         Assert.assertTrue(homePage.verifyFrançaisLanguage.isDisplayed());
     }
 
     @When("İstenilen dil Almanca seçilmelidir.")
     public void i̇stenilenDilAlmancaSeçilmelidir() {
-        ReusableMethods.ddmValue(homePage.LanguageDropDownButton,"Deutsch");
+        ReusableMethods.ddmValue(homePage.LanguageDropDownButton, "Deutsch");
         homePage.DeutschLanguageButton.click();
         Assert.assertTrue(homePage.verifyDeutschLanguage.isDisplayed());
     }
 
     @When("İstenilen dil İngilizce seçilmelidir.")
     public void i̇stenilenDilİngilizceSeçilmelidir() {
-        ReusableMethods.ddmValue(homePage.LanguageDropDownButton,"English");
+        ReusableMethods.ddmValue(homePage.LanguageDropDownButton, "English");
         homePage.EnglishLanguageButton.click();
         Assert.assertTrue(homePage.verifyEnglishLanguage.isDisplayed());
     }
 
     @When("İstenilen dil Türkçe seçilmelidir.")
     public void i̇stenilenDilTürkçeSeçilmelidir() {
-        ReusableMethods.ddmValue(homePage.LanguageDropDownButton,"Türkçe");
+        ReusableMethods.ddmValue(homePage.LanguageDropDownButton, "Türkçe");
         homePage.TürkçeLanguageButton.click();
-        Assert.assertTrue(homePage.verifyTurkishLanguage.isDisplayed());*/
+        Assert.assertTrue(homePage.verifyTurkishLanguage.isDisplayed());
     }
+}
 
