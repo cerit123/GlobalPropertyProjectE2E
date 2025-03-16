@@ -19,8 +19,22 @@ public class US17ManagerStepdefs {
     HomePage homePage=new HomePage();
 
 
+<<<<<<< HEAD
 //TC1---------------------------------------------------------
     @When("raporlar sayfasina gidilir")
+=======
+   @When("Manager olarak giris yapilir")
+    public void managerOlarakGirisYapilir() {
+        loginPage.loginButton.click();
+        ActionsUtils.scrollLeft();
+        ActionsUtils.scrollDown();
+        loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
+        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
+        loginPage.login.click();
+    }
+
+    @And("raporlar sayfasina gidilir")
+>>>>>>> master
     public void raporlarSayfasinaGidilir() {
         dashboardPage.reports.click();
     }
@@ -101,7 +115,7 @@ public class US17ManagerStepdefs {
     @Then("Manager olarak  Rapor basariyla olustugu gosterilir")
     public void managerOlarakRaporBasariylaOlustuguGosterilir() {
         Assert.assertFalse(adminManagerRaporPage.reportVerfy.isDisplayed());
-        //WaitUtils.waitFor(5);
+        WaitUtils.waitFor(5);
     }
 
     //TC-3----------------------------------

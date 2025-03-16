@@ -78,7 +78,8 @@ public class US18stepDefs {
         loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
         loginPage.login.click();
 
-    }
+
+}
 
     @When("Soldaki profil menusunden  {string} sekmesi tiklanir")
     public void soldakiProfilMenusundenSekmesiTiklanir(String arg0) {

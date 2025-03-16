@@ -18,9 +18,22 @@ public class US17ManagerStepdefs {
     DashboardPage dashboardPage=new DashboardPage();
     HomePage homePage=new HomePage();
 
+    @Given("Manager olarak  Siteye gidilir")
+    public void managerOlarakSiteyeGidilir() {
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+    }
 
-//TC1---------------------------------------------------------
-    @When("raporlar sayfasina gidilir")
+   @When("Manager olarak giris yapilir")
+    public void managerOlarakGirisYapilir() {
+        loginPage.loginButton.click();
+        ActionsUtils.scrollLeft();
+        ActionsUtils.scrollDown();
+        loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
+        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
+        loginPage.login.click();
+    }
+
+    @And("raporlar sayfasina gidilir")
     public void raporlarSayfasinaGidilir() {
         dashboardPage.reports.click();
     }
@@ -101,21 +114,10 @@ public class US17ManagerStepdefs {
     @Then("Manager olarak  Rapor basariyla olustugu gosterilir")
     public void managerOlarakRaporBasariylaOlustuguGosterilir() {
         Assert.assertFalse(adminManagerRaporPage.reportVerfy.isDisplayed());
-        WaitUtils.waitFor(5);
+        //WaitUtils.waitFor(5);
     }
 
     //TC-3----------------------------------
-
-
-    @Given("Manager olarak profil butonuna tiklanir")
-    public void managerOlarakProfilButonunaTiklanir() {
-        homePage.profilButton.click();
-    }
-
-    @And("Mnager olarak kontrol paneline tiklanir")
-    public void mnagerOlarakKontrolPanelineTiklanir() {
-        homePage.controlPannelButton.click();
-    }
 
     @And("Manager olarak Kullanicilar kismi Manager olarak secilir")
     public void managerOlarakKullanicilarKismiManagerOlarakSecilir() {
@@ -129,8 +131,8 @@ public class US17ManagerStepdefs {
         adminManagerRaporPage.reportButton3.click();
     }
 
-    @Then("Manager olarak Manager kullanici bilgisiyle raporun olusturuldugu  gorulur")
-    public void managerOlarakManagerKullaniciBilgisiyleRaporunOlusturulduguGorulur() {
+    @Then("Manager olarak Admin kullanici bilgisiyle raporun olusturuldugu  gorulur")
+    public void managerOlarakAdminKullaniciBilgisiyleRaporunOlusturulduguGorulur() {
         Assert.assertFalse(adminManagerRaporPage.reportVerfy.isDisplayed());
         WaitUtils.waitFor(3);
     }
@@ -151,115 +153,26 @@ public class US17ManagerStepdefs {
 
     @And("Manager olarak Status kismi secilir")
     public void managerOlarakStatusKismiSecilir() {
-
-        ReusableMethods.ddmVisibleText(adminManagerRaporPage.statusTur,"All");
-    }
-
-    @And("Manager olarak Rapor{int} Olustur butonuna tiklanir")
-    public void managerOlarakRaporOlusturButonunaTiklanir(int arg0) {
-        adminManagerRaporPage.reportButton4.click();
+        ReusableMethods.ddmValue(adminManagerRaporPage.statusTur,"1");
     }
 
     @Then("Manager olarak Tur istekleri listelenir ve rapor basariyla olusturulur")
     public void managerOlarakTurIstekleriListelenirVeRaporBasariylaOlusturulur() {
-        Assert.assertFalse(adminManagerRaporPage.raporExcel.isDisplayed());
-        WaitUtils.waitFor(2);
+        Assert.assertFalse(adminManagerRaporPage.reportVerfy.isDisplayed());
+        WaitUtils.waitFor(5);
     }
 
     //TC-5 NEGATIVE
 
     @And("start date kismina  bos birakilir")
     public void startDateKisminaBosBirakilir() {
-
         adminManagerRaporPage.startDate.sendKeys("");
     }
 
-    @And("end date kismina gecerli veri girilir")
-    public void endDateKisminaGecerliVeriGirilir() {
-        adminManagerRaporPage.endDate.sendKeys(ConfigReader.getProperty("endDate"));
-
-    }
-
-    @And("category kismi house olarak secilir")
-    public void categoryKismiHouseOlarakSecilir() {
-        adminManagerRaporPage.category.click();
-        ReusableMethods.ddmValue(adminManagerRaporPage.category,"1");
-    }
-
-    @And("advert type kismini rent olarak secilir")
-    public void advertTypeKisminiRentOlarakSecilir() {
-        adminManagerRaporPage.type.click();
-        ReusableMethods.ddmVisibleText(adminManagerRaporPage.category,"Sale");
-    }
-
-    @And("Manager olarak Status kismi  pending olaraksecilir")
-    public void managerOlarakStatusKismiPendingOlaraksecilir() {
-        adminManagerRaporPage.status.click();
-        ReusableMethods.ddmVisibleText(adminManagerRaporPage.category,"Pending");
-    }
-
-
-    @And("Manager olarak rapor Olusturulur")
-    public void managerOlarakRaporOlusturulur() {
-        adminManagerRaporPage.reportButton1.click();
-    }
     @Then("Manager olarak Raporun basariyla olusturulmadigi ve hata mesaji alindigi gorulur")
     public void managerOlarakRaporunBasariylaOlusturulmadigiVeHataMesajiAlindigiGorulur() {
         Assert.assertTrue(adminManagerRaporPage.raporExcelEmpyt.isDisplayed());
     }
 
-    //TC6-------------------------------------------
 
-    @And("Manager olarak Raporlar sekmesine gidilir")
-    public void managerOlarakRaporlarSekmesineGidilir() {
-        dashboardPage.reports.click();
-    }
-
-
-    @And("Manager olarak Start date kismina {string}   veri girilir")
-    public void managerOlarakStartDateKisminaVeriGirilir(String Start) {
-        adminManagerRaporPage.startDate.sendKeys(ConfigReader.getProperty(Start));
-
-    }
-
-    @And("Manager olarak End date kismina Start date  kisminda once bir tarih{string} girilir")
-    public void managerOlarakEndDateKisminaStartDateKismindaOnceBirTarihGirilir(String End) {
-        adminManagerRaporPage.endDate.sendKeys(ConfigReader.getProperty(End));
-    }
-
-    @And("Manager olarak Category kismi secilir")
-    public void managerOlarakCategoryKismiSecilir() {
-        adminManagerRaporPage.category.click();
-        ReusableMethods.ddmValue(adminManagerRaporPage.category,"1");
-
-    }
-
-    @And("Manager olarak Advert type kismi secilir")
-    public void managerOlarakAdvertTypeKismiSecilir() {
-        adminManagerRaporPage.type.click();
-        ReusableMethods.ddmVisibleText(adminManagerRaporPage.type,"All");
-
-    }
-
-
-    @Then("Raporlama olmayip hata mesaji gorulmeli")
-    public void raporlamaOlmayipHataMesajiGorulmeli() {
-        Assert.assertTrue(adminManagerRaporPage.dateVerfy.isDisplayed());
-    }
-//TC6------------------------------------------------------
-    @And("profil kismina gidilir")
-    public void profilKisminaGidilir() {
-        homePage.profilButton.click();
-    }
-
-    @And("kontrol Paneli  sekmesine gidilir")
-    public void kontrolPaneliSekmesineGidilir() {
-
-    }
-
-    @Then("kontrol Paneli  sekmesinin olmadigi gorulur")
-    public void kontrolPaneliSekmesininOlmadigiGorulur() {
-        //Assert.assertFalse(homePage.controlPannelButton.isEnabled());
-       BrowserUtils.verifyElementNotDisplayed(homePage.controlPannelButton);
-    }
 }
