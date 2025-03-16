@@ -15,7 +15,7 @@ public class DashboardPage {
 
 
     @FindBy(xpath = "//span[contains(text(), 'ContactMessages')]")
-    public WebElement ContactMessages;
+    public WebElement contactMessages;
 
 
     @FindBy(xpath = "//span[text()='Tour Requests']")

@@ -5,7 +5,7 @@ Feature:
 
     Given Sisteme Admin olarak giriş yapilir
     When Contact mesajları sayfasına gidilir
-    And Mesajlar görüntülenir
+    And Mesajları görüntüle
     And Bir mesaj silinir
     Then Mesajin silindigi dogrulanir
 

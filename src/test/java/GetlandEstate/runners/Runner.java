@@ -15,7 +15,11 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
 
         glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
+<<<<<<< Updated upstream
         tags = "@US09",
+=======
+        tags = "@US20",
+>>>>>>> Stashed changes
         dryRun = false
 )
 public class Runner {
