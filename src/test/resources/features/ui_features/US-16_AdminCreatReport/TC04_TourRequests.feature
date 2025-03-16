@@ -1,4 +1,4 @@
-@UI@US-16
+@UI@US-1
 Feature: US-16_AdminCreatReport test
 
   Scenario: Tur isteklerine gore rapor olusturabilmelidir
