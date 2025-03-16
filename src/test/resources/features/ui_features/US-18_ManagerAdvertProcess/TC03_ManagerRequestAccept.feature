@@ -3,7 +3,7 @@
 Feature: US018_Manager ilanlar ile ilgili islem yapar
     Scenario: Manager kendi verdigi ilanlarin randevu isteklerini gorebilmeli
 
-    Given Manager olarak giris yapilir.
+
     When Soldaki manager menusunden  My Tour Requests sekmesi tiklanir
     And My Responses listesi acilir.
     And My Responsesdaki ilanda onay tusuna basar

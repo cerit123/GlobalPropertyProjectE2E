@@ -72,7 +72,4 @@ public class AdminManagerRaporPage {
    @FindBy(xpath = "//span[text()='Error']")
    public WebElement dateVerfy;
 
-    @FindBy(xpath = "//span[text()='Logout']")
-    public WebElement logout;
-
 }

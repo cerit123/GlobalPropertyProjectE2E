@@ -11,7 +11,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+import java.util.Random;
 
 public class US18stepDefs {
     HomePage homePage= new HomePage();
@@ -53,47 +58,54 @@ public class US18stepDefs {
 
     @And("Schedule a Tour kismindan tur tarihi secilir.")
     public void scheduleATourKismindanTurTarihiSecilir() {
-        ReusableMethods.waitForSecond(5);
+        ReusableMethods.waitForSecond(2);
         ActionsUtils.scrollDown();
-        myTourRequestsPage.tourDateChoose.click();
-        myTourRequestsPage.tourDateChoose.sendKeys(ConfigReader.getProperty("contactDate"));
+        //myTourRequestsPage.tourDateChoose.click();
+        myTourRequestsPage.tourDateChoose.sendKeys(ConfigReader.getProperty("contactDate"), Keys.TAB);
+
     }
 
     @And("Schedule a Tour kismindan  tur saati secilir.")
     public void scheduleATourKismindanTurSaatiSecilir() {
         ReusableMethods.waitForSecond(5);
-        ReusableMethods.ddmVisibleText(myTourRequestsPage.timeBooking,"18:00");
+        Select select = new Select(myTourRequestsPage.tourTimeChoose);
+        List<WebElement> options = select.getOptions();
+        Random random = new Random();
+        int randomIndex = random.nextInt(options.size());
+        select.selectByIndex(randomIndex);
     }
 
     @And("Submit a tour request butonu  tiklanir.")
     public void submitATourRequestButonuTiklanir() {
-        ReusableMethods.waitForSecond(5);
-        myTourRequestsPage.updateChoose.click();
+        ReusableMethods.waitForSecond(2);
+        myTourRequestsPage.tourRequestSubmitButton.click();
 
     }
 
     @Then("Tour Requestin gonderildigi dogrulanir.")
     public void tourRequestinGonderildigiDogrulanir() {
+        ReusableMethods.waitForSecond(1);
         Assert.assertTrue(myTourRequestsPage.tourRequestCreatedSuccessfully.isDisplayed());
     }
 
-    //TC02
+    //TC02-----------------------------------------------------
 
-    @Given("Manager olarak giris yapilir.")
-    public void managerOlarakGirisYapilir() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-        loginPage.loginButton.click();
-        ActionsUtils.scrollLeft();
-        ActionsUtils.scrollDown();
-        loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
-        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
-        loginPage.login.click();
+    //@Given("Manager olarak giris yapilir.")
+    //public void managerOlarakGirisYapilir() {
+       // Driver.getDriver().get(ConfigReader.getProperty("url"));
+        //loginPage.loginButton.click();
+       // ActionsUtils.scrollLeft();
+        //ActionsUtils.scrollDown();
+        //loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
+        //loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
+        //loginPage.login.click();
 
 
-}
+//}
 
     @When("Soldaki profil menusunden  {string} sekmesi tiklanir")
     public void soldakiProfilMenusundenSekmesiTiklanir(String arg0) {
+
         homePage.profilButton.click();
     }
 
@@ -121,12 +133,39 @@ public class US18stepDefs {
 
     @And("My Responsesdaki ilanda silme\\(x) tusuna basar")
     public void myResponsesdakiIlandaSilmeXTusunaBasar() {
+
         myTourRequestsPage.actionDeleteButton.click();
     }
 
     @Then("Tour request declined mesajinin gorundugu dogrulanir")
     public void tourRequestDeclinedMesajininGorunduguDogrulanir() {
-        //Assert.assertTrue(myTourRequestsPage..isDisplayed());
+       // Assert.assertTrue(myTourRequestsPageisDisplayed());
+    }
+
+    @And("Profil menusunden  My Tour Requests sekmesi tiklanir")
+    public void profilMenusundenMyTourRequestsSekmesiTiklanir() {
+        homePage.profilButton.click();
+        dashboardPage.tourRequests.click();
+
+    }
+
+    @And("My Responses listesi acilir.")
+    public void myResponsesListesiAcilir() {
+        myTourRequestsPage.myResponses.click();
+    }
+
+    @Then("My Respopnses listesindeki guest goruntulenebiliyor mu kontrol edilir.")
+    public void myRespopnsesListesindekiGuestGoruntulenebiliyorMuKontrolEdilir() {
+    Assert.assertTrue(myTourRequestsPage.guest.isDisplayed());
+    }
+
+    @And("My Responsesdaki ilanda onay tusuna basar")
+    public void myResponsesdakiIlandaOnayTusunaBasar() {
+        myTourRequestsPage.approveAction.click();
+    }
+
+    @Then("Tour Request approved yazisinin gorundugu dogrulanir")
+    public void tourRequestApprovedYazisininGorunduguDogrulanir() {
     }
 }
 
