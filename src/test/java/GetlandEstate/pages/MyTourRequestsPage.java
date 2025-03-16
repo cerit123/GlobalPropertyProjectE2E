@@ -100,10 +100,13 @@ public class MyTourRequestsPage {
 
 
 
+    @FindBy(xpath = "//span[normalize-space()='My Adverts']")
+    public WebElement myAdverts;
 
 
 
-
+    @FindBy(xpath = "//h1[normalize-space()='MY ADVERTS']")
+    public WebElement myAdvertsPage;
 
 
 
