@@ -1,6 +1,5 @@
 package GetlandEstate.hooks;
 
-
 import GetlandEstate.pages.HomePage;
 import GetlandEstate.pages.LoginPage;
 import GetlandEstate.utilities.ConfigReader;
@@ -12,19 +11,23 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-public class hookManager {
+public class hookCostumer {
 
 
-    @Before("@Manager")
-    public static void setUp() {
+    @Before("@Costumer")
+    public void setUp() {
         LoginPage loginPage = new LoginPage();
+<<<<<<< HEAD
         HomePage homePage=new HomePage();
+=======
+        HomePage homePage = new HomePage();
+>>>>>>> master
 
-            Driver.getDriver().get(ConfigReader.getProperty("url"));
-            homePage.LoginButton.click();
-            loginPage.mailButton.sendKeys(ConfigReader.getProperty("manager"));
-            loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password2"));
-            loginPage.login.click();
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        homePage.LoginButton.click();
+        loginPage.mailButton.sendKeys(ConfigReader.getProperty("emailCostumer"));
+        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("passwordCostumer"));
+        loginPage.login.click();
 
         WaitUtils.waitFor(2);
     }
@@ -38,9 +41,9 @@ public class hookManager {
             Driver.closeDriver();
         }
         try {
-            Driver.closeDriver();
+           // Driver.closeDriver();
         } catch (Exception e) {
             System.out.println("Driver kapatma sırasında hata oluştu: " + e.getMessage());
         }
-}
+    }
 }
