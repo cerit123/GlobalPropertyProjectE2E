@@ -16,24 +16,7 @@ public class US16CreatReportStepdefs {
     HomePage homePage=new HomePage();
 
 
-    @Given("Siteye gidilir")
-    public void siteyeGidilir() {
-
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-
-    }
-
-    @When("Admin olarak giris yapilir")
-    public void adminOlarakGirisYapilir() {
-        loginPage.loginButton.click();
-        ActionsUtils.scrollLeft();
-        ActionsUtils.scrollDown();
-        loginPage.mailButton.sendKeys(ConfigReader.getProperty("admin"));
-        loginPage.passwordButton.sendKeys(ConfigReader.getProperty("password1"));
-        loginPage.login.click();
-    }
-
-
+//TC1------------------------------------------------
 
     @And("Rapor butonuna tiklanir")
     public void raporButonunaTiklanir() {
@@ -54,19 +37,19 @@ public class US16CreatReportStepdefs {
     @And("Category kismina gecerli veri girilir")
     public void categoryKisminaGecerliVeriGirilir() {
         adminManagerRaporPage.category.click();
-        ReusableMethods.ddmValue(adminManagerRaporPage.category,"2");
+        ReusableMethods.ddmVisibleText(adminManagerRaporPage.category,"All");
     }
 
     @And("Advert type kismina gecerli veri grilir")
     public void advertTypeKisminaGecerliVeriGrilir() {
         adminManagerRaporPage.type.click();
-        ReusableMethods.ddmValue(adminManagerRaporPage.type,"2");
+        ReusableMethods.ddmVisibleText(adminManagerRaporPage.type,"All");
     }
 
     @And("Status kismina gecerli veri girilir")
     public void statusKisminaGecerliVeriGirilir() {
         adminManagerRaporPage.status.click();
-        ReusableMethods.ddmValue(adminManagerRaporPage.status,"1");
+        ReusableMethods.ddmVisibleText(adminManagerRaporPage.status,"All");
         WaitUtils.waitFor(3);
     }
 
@@ -79,15 +62,16 @@ public class US16CreatReportStepdefs {
 
     @Then("Rapor basariyla olustugu gosterilir")
     public void raporBasariylaOlustuguGosterilir() {
-       // BrowserUtils.getTextWithTimeout(adminManagerRaporPage.raporExcel,10);
         WaitUtils.waitFor(1);
-        //WaitUtils.waitForVisibility(adminManagerRaporPage.raporExcel,20);
-       // JSUtils.JSscrollIntoView(adminManagerRaporPage.raporExcel);
-        Assert.assertFalse(adminManagerRaporPage.reportVerfy.isDisplayed());
+        Assert.assertTrue(adminManagerRaporPage.raporExcel.isDisplayed());
+        WaitUtils.waitFor(3);
 
     }
 
-
+    @And("logout butonuna tiklanir")
+    public void logoutButonunaTiklanir() {
+        adminManagerRaporPage.logout.click();
+    }
 
 //TC-2 test case
 
@@ -108,9 +92,18 @@ public class US16CreatReportStepdefs {
     public void enPopulerIlanlarKismindaMiktarKismiSecilir() {
         adminManagerRaporPage.populerIlan.sendKeys(ConfigReader.getProperty("amount"));
 
+
     }
 
 
+    @Then("Rapor  populer ilanlar raporu basariyla olustugu gosterilir")
+    public void raporPopulerIlanlarRaporuBasariylaOlustuguGosterilir() {
+        //Assert.assertTrue(adminManagerRaporPage.reportVerfy.isDisplayed());
+        BrowserUtils.verifyElementDisplayed(adminManagerRaporPage.raporExcel);
+        WaitUtils.waitFor(3);
+    }
+
+//TC-3-------------------------------------------------
     @And("Kullanicilar kismi Admin olarak secilir")
     public void kullanicilarKismiAdminOlarakSecilir() {
         adminManagerRaporPage.role.click();
@@ -120,7 +113,7 @@ public class US16CreatReportStepdefs {
     @And("Raporu Olustur butonuna tiklanir")
     public void raporuOlusturButonunaTiklanir() {
 
-        adminManagerRaporPage.reportButton1.click();
+        adminManagerRaporPage.reportButton2.click();
     }
 
     @Then("Admin kullanici bilgisiyle raporun olusturuldugu  gorulur")
@@ -157,6 +150,9 @@ public class US16CreatReportStepdefs {
 
     @And("Sayfa kapatilir")
     public void sayfaKapatilir() {
+
         Driver.closeDriver();
     }
+
+
 }
