@@ -13,10 +13,10 @@ import org.junit.Assert;
 public class US2UserLoginStepdefs {
     LoginPage loginPage = new LoginPage();
 
- @Given("sayfaya gidilir")
- public void sayfayaGidilir() {
-       Driver.getDriver().get(ConfigReader.getProperty("url"));
-}
+     @Given("sayfaya gidilir")
+     public void sayfayaGidilir() {
+           Driver.getDriver().get(ConfigReader.getProperty("url"));
+    }
 
 //    @When("Login sekmesine tiklanir")
 //    public void loginSekmesineTiklanir() {
