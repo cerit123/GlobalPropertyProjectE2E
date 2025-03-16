@@ -1,4 +1,4 @@
-
+@US-13 @Manager
 
 Feature:US-13_Manager Accept Appointment Test
 
@@ -8,6 +8,6 @@ Feature:US-13_Manager Accept Appointment Test
     When profile tiklamalidir
     And Tur Taleplerime tiklamalidir
     And Tur Cevaplarim listesi goruntulenir.
-    And onaylanma kismina tiklanir
-    And cikan sekmedeki reddetmek kutusuna tiklanir
+    And reddetme kismina tiklanir
+    And  cikan reddetme kutusuna yes'e tiklanir
     Then reddedildigine dair yazi kontrol edilir.
