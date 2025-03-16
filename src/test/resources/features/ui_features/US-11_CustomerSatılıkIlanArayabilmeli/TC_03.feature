@@ -1,5 +1,5 @@
 
-@US-11f @UI @Costumer
+@US-11 @UI @Costumer
 Feature:
  Scenario:Price Range min box ına negatif değer girldiğinde hata mesajı vemeli (negative)
    Given  search box ın üzerindeki sale butonuna tıklanır

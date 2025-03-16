@@ -88,7 +88,7 @@ public class US18stepDefs {
         Assert.assertTrue(myTourRequestsPage.tourRequestCreatedSuccessfully.isDisplayed());
     }
 
-    //TC02-----------------------------------------------------
+    //TC02=====================================================================
 
     //@Given("Manager olarak giris yapilir.")
     //public void managerOlarakGirisYapilir() {
@@ -102,34 +102,40 @@ public class US18stepDefs {
 
 
 //}
+    @And("Profil menusunden  My Tour Requests sekmesi tiklanir")
+    public void profilMenusundenMyTourRequestsSekmesiTiklanir() {
+    homePage.profilButton.click();
+    dashboardPage.tourRequests.click();
 
-    @When("Soldaki profil menusunden  {string} sekmesi tiklanir")
-    public void soldakiProfilMenusundenSekmesiTiklanir(String arg0) {
+}
 
-        homePage.profilButton.click();
-    }
-
-    @And("{string} listesi acilir.") //My Tour Requests
-    public void listesiAcilir(String arg0) {
-        homePage.profilButton.click();
+    @And("My Responses listesi acilir.")
+    public void myResponsesListesiAcilir() {
         myTourRequestsPage.myResponses.click();
-
     }
 
-    @Then("{string} listesindeki guest  goruntulenebiliyor mu kontrol edilir.")
-    public void listesindekiGuestGoruntulenebiliyorMuKontrolEdilir(String arg0) {
-        Assert.assertTrue(myTourRequestsPage.guest.isDisplayed());
+    @Then("My Respopnses listesindeki guest goruntulenebiliyor mu kontrol edilir.")
+    public void myRespopnsesListesindekiGuestGoruntulenebiliyorMuKontrolEdilir() {
+        Assert.assertTrue(myTourRequestsPage.statusResponses.isDisplayed());
     }
 
-    //TC04
+    //TC03==========================================================
 
-    @And("Soldaki manager menusunden  My Tour Requests sekmesi tiklanir")
-    public void soldakiManagerMenusundenMyTourRequestsSekmesiTiklanir() {
-        homePage.profilButton.click();
-        dashboardPage.tourRequests.click();
-        myTourRequestsPage.myResponses.click();
 
+    @And("My Responsesdaki ilanda onay tusuna basar")
+    public void myResponsesdakiIlandaOnayTusunaBasar() {
+        myTourRequestsPage.approveAction.click();
     }
+
+    @Then("Tour Request approved yazisinin gorundugu dogrulanir")
+    public void tourRequestApprovedYazisininGorunduguDogrulanir() {
+        Assert.assertTrue(myTourRequestsPage.tourRequestCreatedSuccessfully.isDisplayed());
+    }
+
+
+    //TC04============================================================================
+
+
 
     @And("My Responsesdaki ilanda silme\\(x) tusuna basar")
     public void myResponsesdakiIlandaSilmeXTusunaBasar() {
@@ -139,33 +145,11 @@ public class US18stepDefs {
 
     @Then("Tour request declined mesajinin gorundugu dogrulanir")
     public void tourRequestDeclinedMesajininGorunduguDogrulanir() {
-       // Assert.assertTrue(myTourRequestsPageisDisplayed());
+        Assert.assertTrue(myTourRequestsPage.tourRequestDecline.isDisplayed());
     }
 
-    @And("Profil menusunden  My Tour Requests sekmesi tiklanir")
-    public void profilMenusundenMyTourRequestsSekmesiTiklanir() {
-        homePage.profilButton.click();
-        dashboardPage.tourRequests.click();
 
-    }
 
-    @And("My Responses listesi acilir.")
-    public void myResponsesListesiAcilir() {
-        myTourRequestsPage.myResponses.click();
-    }
 
-    @Then("My Respopnses listesindeki guest goruntulenebiliyor mu kontrol edilir.")
-    public void myRespopnsesListesindekiGuestGoruntulenebiliyorMuKontrolEdilir() {
-    Assert.assertTrue(myTourRequestsPage.guest.isDisplayed());
-    }
-
-    @And("My Responsesdaki ilanda onay tusuna basar")
-    public void myResponsesdakiIlandaOnayTusunaBasar() {
-        myTourRequestsPage.approveAction.click();
-    }
-
-    @Then("Tour Request approved yazisinin gorundugu dogrulanir")
-    public void tourRequestApprovedYazisininGorunduguDogrulanir() {
-    }
 }
 

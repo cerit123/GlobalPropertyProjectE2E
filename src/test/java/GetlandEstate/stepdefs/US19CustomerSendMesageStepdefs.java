@@ -62,4 +62,43 @@ public class US19CustomerSendMesageStepdefs {
      Assert.assertTrue(contactPage.successMassage.isDisplayed());
 
     }
+
+    //TC02=======================================================================
+
+    @And("Acilan pencereye gecersiz bir first name girilir\\(rakam)")
+    public void acilanPencereyeGecersizBirFirstNameGirilirRakam() {
+
+        contactPage.firstNameBox.sendKeys("123");
+        // contactPage.LastNameBox.sendKeys(ConfigReader.getProperty("contactlastName"));
+        // contactPage.eMailBox.sendKeys(ConfigReader.getProperty("contactemail"));
+       //  contactPage.massageBox.sendKeys("gecerli mesaj");
+
+    }
+
+    @Then("Mesajin gonderilmedigi dogrulanir")
+    public void mesajinGonderilmedigiDogrulanir() {
+        // contactPage.sendButton.click();
+        Assert.assertFalse(contactPage.successMassage.isDisplayed());
+    }
+
+
+    @And("Acilan pencereye gecersiz bir last name  girilir\\(rakam)")
+    public void acilanPencereyeGecersizBirLastNameGirilirRakam() {
+        contactPage.LastNameBox.sendKeys("12345");
+    }
+
+    @And("Gecersiz bir email adresi noktasiz girilir")
+    public void gecersizBirEmailAdresiNoktasizGirilir() {
+        contactPage.eMailBox.sendKeys("abc@abccom");
+    }
+
+    @And("Acilan pencereye bos mesaj girilir")
+    public void acilanPencereyeBosMesajGirilir() {
+        contactPage.massageBox.sendKeys("");
+    }
+
+    @And("Gecersiz bir email adresi @ isareti olmadan girilir")
+    public void gecersizBirEmailAdresiIsaretiOlmadanGirilir() {
+        contactPage.eMailBox.sendKeys("abc@abccom");
+    }
 }

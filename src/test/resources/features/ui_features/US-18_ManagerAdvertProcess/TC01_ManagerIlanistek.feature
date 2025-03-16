@@ -1,4 +1,4 @@
-@US-18h @Manager
+@US-18 @Manager
 Feature: US018_Manager ilanlar ile ilgili islem yapar
   Scenario: Manager kendine ait olmayan bir ilan icin istekte bulunabilir
 

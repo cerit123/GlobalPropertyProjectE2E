@@ -94,11 +94,19 @@ public class MyTourRequestsPage {
     @FindBy(xpath = "//span[text()='Created']")
     public WebElement tourRequestCreatedSuccessfully;
 
+    @FindBy(xpath = "//span[text()='Tour request declined']")
+    public WebElement tourRequestDecline;
+
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement tourRequestSubmitButton;
 
     @FindBy(xpath = "//div[@class=' row-cols-1 row-cols-sm-2 row-cols-lg-3 row']//div[1]//div[1]//a[1]")
     public WebElement houseButton;
+
+    @FindBy(xpath = "(//span[text()='PENDING'])[1]")
+    public WebElement pendingStatus;
+
+
 
 
 
