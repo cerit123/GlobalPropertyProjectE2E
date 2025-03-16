@@ -1,0 +1,19 @@
+
+@US-11 @UI @Costumer
+Feature:
+  Scenario:Price Range max box ına min değerinden küçük  değer girldiğinde hata mesajı vemeli (negative)
+<<<<<<<< HEAD:src/test/resources/features/ui_features/US-10_CustomerKiralıkIlanArayabilmeli/TC_05.feature
+
+    Given  search box ın üzerindeki rent butonuna tıklanır
+========
+    Given  search box ın üzerindeki sale butonuna tıklanır
+>>>>>>>> master:src/test/resources/features/ui_features/US-11_CustomerSatılıkIlanArayabilmeli/TC_05.feature
+    And    search butonuna tıklanır
+    And    açılan sol pencerede Price Range bölümünde min kutusuna bir değer girilir
+    And    açılan sol pencerede Price Range bölümünde max kutusuna miinimum değerden küçük bir değer girilir
+    And    Advert Type, Category, Country dropdownlarında all seçeneği seçilmelidir
+    And    City ve District  dropdownları boş olmalıdır
+    Then   searchh butonuna tıklanır
+    Then   uyarı mesajı görülmelidir
+
+
