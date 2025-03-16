@@ -1,6 +1,6 @@
 @US-12
   Feature:
-    Scenario Outline: Kayit islemi yapilmadan rent ve sale arama yapibilmelidir.
+    Scenario Outline: Search kısmından istediği emlağı seçip genel arama yapabilmeli
       Given Siteye gidilir.
       When Search kisminda bulunan Rent butonuna tiklanir
       And search box ın altındaki emlak "<emlakTürleri>" seçilir
