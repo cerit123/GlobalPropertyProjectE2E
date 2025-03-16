@@ -1,5 +1,9 @@
 
-@US-11 @UI @Costumer
+<<<<<<< HEAD:src/test/resources/features/ui_features/US-10_Customer kiralık ilan arayabilmeli/TC_03.feature
+@US-10 @UI @Costumer
+=======
+@US-11f @UI @Costumer
+>>>>>>> master:src/test/resources/features/ui_features/US-11_CustomerSatılıkIlanArayabilmeli/TC_03.feature
 Feature:
  Scenario:Price Range min box ına negatif değer girldiğinde hata mesajı vemeli (negative)
    Given  search box ın üzerindeki sale butonuna tıklanır

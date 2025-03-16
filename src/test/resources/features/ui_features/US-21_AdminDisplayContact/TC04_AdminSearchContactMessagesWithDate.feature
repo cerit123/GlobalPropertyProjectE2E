@@ -1,4 +1,4 @@
-@US20 @UI @E2E
+@US20 @UI @E2E @Admin
 Feature:
 
   Scenario: Admin Okunan ve okunmayan mesajlar içerisinde tarih aralığı vererek arama yapabilmeli

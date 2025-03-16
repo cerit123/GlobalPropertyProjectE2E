@@ -4,9 +4,9 @@ import GetlandEstate.pages.ContactMessagesPage;
 import GetlandEstate.pages.DashboardPage;
 import GetlandEstate.utilities.ConfigReader;
 import GetlandEstate.utilities.Driver;
+import GetlandEstate.utilities.JSUtils;
 import GetlandEstate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -15,7 +15,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class US20ManagerDisplayContactStepdefs {
+public class US20_US21ManagerDisplayContactStepdefs {
 
     ContactMessagesPage contactMessagesPage = new ContactMessagesPage();
     DashboardPage dashboardPage = new DashboardPage();
@@ -28,11 +28,12 @@ public class US20ManagerDisplayContactStepdefs {
     public void contactMesajlarıSayfasınaGidilir() {
 
         ReusableMethods.waitForSecond(2);
-        dashboardPage.contactMessages.click();
+        JSUtils.JSclickWithTimeout(dashboardPage.contactMessages);
+     //   dashboardPage.contactMessages.click();
 
     }
 
-    @And("Mesajları görüntüle")
+    @And("Mesajlar görüntülenir")
     public void mesajlarıGörüntüle() {
         ReusableMethods.waitForSecond(2);
         contactMessagesPage.message.click();

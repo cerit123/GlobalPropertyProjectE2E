@@ -17,14 +17,11 @@ passwordCostumer=Password123.
 newPasswordCostumer=NewPassword123.
 invalidCustomerEmail=invalidemailthefluent.org
 invalidCustomerEmail2=invalidemail@thefluentcom
-
 <<<<<<< HEAD
-#Contact Message datalari
-contactfirstName=ab
-contactlastName=cd
-contactemail=abcd@gmail.com
-contactDate=19.12.2025
+
+
 =======
+
 
 
 advertTitle=New Test Advert
