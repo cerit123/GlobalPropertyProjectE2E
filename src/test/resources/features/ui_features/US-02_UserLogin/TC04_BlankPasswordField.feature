@@ -1,4 +1,4 @@
-@US02 @UI @E2E
+@US2 @UI @E2E
 Feature: US2_UserLogin Test
   Scenario: Password boş geçildiğinde kayıt işlemi başarısız olmalıdır
 
