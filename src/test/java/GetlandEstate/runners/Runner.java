@@ -13,12 +13,17 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
 
+
        glue = {"GetlandEstate/stepdefs"},
         tags = "@US07",
 
 
         dryRun = true
+
 )
 public class Runner {
-
 }
+
+
+
+

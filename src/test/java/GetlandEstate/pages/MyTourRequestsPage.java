@@ -29,6 +29,9 @@ public class MyTourRequestsPage {
     @FindBy(xpath = "(//span[text()='Owner'])[1]")
     public WebElement owner;
 
+    @FindBy(xpath = "(//span[text()='Guest'])[1]")
+    public WebElement guest;
+
     @FindBy(xpath = "(//span[text()='Status'])[1]")
     public WebElement statusRequests;
 
