@@ -31,8 +31,8 @@ public class US13_US14StepDefs {
     @When("profile tiklamalidir")
     public void profileTiklamalidir() {
         homePage.profilButton.click();
-        //ActionsUtils.scrollDown();
-        ReusableMethods.waitForSecond(2);
+        ActionsUtils.scrollDown();
+        ReusableMethods.waitForSecond(5);
     }
 
     @And("ilanlarima tiklanmalidir")
