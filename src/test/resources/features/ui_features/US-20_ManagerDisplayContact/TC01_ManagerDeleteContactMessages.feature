@@ -1,11 +1,11 @@
-@US20 @UI @E2E
+@US20 @Manager @UI @E2E
 Feature:
 
   Scenario: Manager Contact mesajları görebilmeli ve silebilmelidir
 
-    Given Sisteme Manager olarak giriş yapilir
+    Given Manager olarak giris yapilir
     When Contact mesajları sayfasına gidilir
-    And Mesajları görüntüle
+    And Mesajlar görüntülenir
     And Bir mesaj silinir
     Then Mesajin silindigi dogrulanir
 
