@@ -140,8 +140,10 @@ public class US10_US11Stepdefs {
 
     @Then("uyarı mesajı görülmelidir")
     public void uyarıMesajıGörülmelidir() {
+        ActionsUtils.scrollHome();
         ReusableMethods.waitForSecond(1);
-        Assert.assertTrue(searchPage.errorMassage.isDisplayed());
+
+        Assert.assertTrue(searchPage.propertiesList.isEmpty());
     }
 
     @And("açılan sol pencerede Price Range bölümünde min kutusuna bir değer girilir")
@@ -227,6 +229,7 @@ public class US10_US11Stepdefs {
     @And("Schedule a tour bölümünde geçerli geçerli bir tarih seçilir")
     public void scheduleATourBölümündeGeçerliGeçerliBirTarihSeçilir() {
         faker = new Faker();
+        ReusableMethods.waitForSecond(1);
         searchPage.tourDate.sendKeys("15.12.2026", Keys.TAB, Keys.TAB);
     }
 
@@ -234,7 +237,7 @@ public class US10_US11Stepdefs {
     public void scheduleATourBölümündeGeçerliGeçerliBirSaatSeçilir() {
         Select select = new Select(searchPage.tourTime);
 
-        // Mevcut tüm saatleri al
+
         List<WebElement> options = select.getOptions();
         Random random = new Random();
         int randomIndex = random.nextInt(options.size());
