@@ -10,8 +10,8 @@ Feature: US01 Customer sayfaya kayıt olabilmelidir.
     When Register sekmesine tiklanir
     And First name kısmına "Muhammet" girilir
     And Last name kısmına "Olunk" girilir
-    And Phone number kısmına "5447792497" girilir
-    And Email address kısmına "sample12@gmail.com" girilir
+    And Phone number kısmına "5429592497" girilir
+    And Email address kısmına "samle36@gmail.com" girilir
     And Password kısmına "12345aA?" yazılır
     And Confirm password kısmına "12345aA?" tekrar yazılır
     And Terms of Use butonuna tıklanır

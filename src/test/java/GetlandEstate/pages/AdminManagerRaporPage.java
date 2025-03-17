@@ -49,11 +49,11 @@ public class AdminManagerRaporPage {
     //tum raporlama icin bu buton kullanilacak
     @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
     public WebElement reportButton1;
-    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
+    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[2]")
     public WebElement reportButton2;
-    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
+    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[3]")
     public WebElement reportButton3;
-    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
+    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[4]")
     public WebElement reportButton4;
 
     //raporlama yaptiktan sonra bu mesaj gorunur olacak
@@ -69,8 +69,11 @@ public class AdminManagerRaporPage {
     @FindBy(xpath = "//div[text()='There is no data to export to Excel. Data list empty]")
     public WebElement raporExcelEmpyt;
 
-//    @FindBy(id = "status")
-//    public WebElement statusTur;
+   @FindBy(xpath = "//span[text()='Error']")
+   public WebElement dateVerfy;
+
+    @FindBy(xpath = "//span[text()='Logout']")
+    public WebElement logout;
 
 
 }

@@ -68,6 +68,7 @@ public class UsersPage {
     @FindBy(xpath = "//button[@type='button'][1]")
     public WebElement backButton;
 
+
     @FindBy(xpath = "//input[@name='search']")
     public WebElement searchTitle;
 
@@ -79,5 +80,15 @@ public class UsersPage {
 
     @FindBy (xpath = "//tbody//button[2]//*[name()='svg']")
     public WebElement arananKullanıcınınEditi;
+
+    @FindBy(xpath = "(//span[text()='Name'])[2]")
+    public WebElement usersName;
+
+    @FindBy(xpath = "//div[@class='p-toast-detail']")
+    public WebElement userCanNotUpdate;
+
+
+
+
 
 }

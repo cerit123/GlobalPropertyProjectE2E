@@ -1,10 +1,9 @@
-@US20 @UI @E2E
-Feature:
+@US20 @Manager @UI @E2E
+Feature: Manager marks contact messages as read
 
   Scenario: Manager Contact mesajları okundu olarak isaretleyebilmelidir
 
-    Given Sisteme Manager olarak giriş yapilir
-    When Contact mesajları sayfasına gidilir
-    And Bir mesaj okundu olarak işaretlenir
+    Given Contact mesajları sayfasına gidilir
+    When Bir mesaj okundu olarak işaretlenir
     Then Mesajin okundu olarak isaretlendigi dogrulanir
 

@@ -23,7 +23,7 @@ public class US17ManagerStepdefs {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
     }
 
-    @When("Manager olarak giris yapilir")
+   @When("Manager olarak giris yapilir")
     public void managerOlarakGirisYapilir() {
         loginPage.loginButton.click();
         ActionsUtils.scrollLeft();
