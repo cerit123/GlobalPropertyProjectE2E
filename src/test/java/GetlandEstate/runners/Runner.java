@@ -11,29 +11,16 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
 
+        },
+                features = "src/test/resources/features",
 
+        glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
 
-       glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
 
         tags = "@US-04",
 
         dryRun = true
 
-
-        },
-        features = "src/test/resources/features",
-
-        glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-        tags = "@US09",
-=======
-        tags = "@US20",
->>>>>>> Stashed changes
-=======
-        tags = "@US-11",
->>>>>>> master
-        dryRun = false
 
 )
 public class Runner {
