@@ -121,13 +121,29 @@ public class MyTourRequestsPage {
     public WebElement myAdvertsPage;
 
 
+    @FindBy(xpath = "//p[normalize-space()='MY RESPONSES']")
+    public WebElement myResponses1;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[6]/div[1]/span[2]/button[2]//*[name()='svg']")
+    public WebElement myAction;
+
+    @FindBy(xpath = "//span[normalize-space()='Yes']")
+    public WebElement myActionYes;
+//cancel icin evet deme tusu
+    @FindBy(xpath = "//span[normalize-space()='Yes']")
+    public WebElement myActionCancelYes;
+//camcel tusu
+    @FindBy(xpath = "//tbody/tr[1]/td[6]/div[1]/span[2]/button[1]")
+    public WebElement myActiondeleteOnay;
 
 
+    //cikan yazilar
+    @FindBy(xpath = "//div[@class='p-toast-message-text']")
+    public WebElement myActionCancelYesMesaj;
 
 
-
-
-
+    @FindBy(xpath = "//div[@class='p-toast-detail']")
+    public WebElement myActionSuccessfully;
 
 
 

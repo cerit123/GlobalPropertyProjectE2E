@@ -1,19 +1,14 @@
 package GetlandEstate.stepdefs;
 
 import GetlandEstate.pages.*;
-import GetlandEstate.utilities.ActionsUtils;
-import GetlandEstate.utilities.ConfigReader;
-import GetlandEstate.utilities.Driver;
 import GetlandEstate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-public class US13_US14StepDefs {
+public class US13_StepDefs {
 
     HomePage homePage= new HomePage();
     MyProfilePage myProfilePage= new MyProfilePage();
@@ -31,18 +26,21 @@ public class US13_US14StepDefs {
     @When("profile tiklamalidir")
     public void profileTiklamalidir() {
         homePage.profilButton.click();
-        ActionsUtils.scrollDown();
-        ReusableMethods.waitForSecond(5);
+        //ActionsUtils.scrollDown();
+        ReusableMethods.waitForSecond(2);
     }
 
     @And("ilanlarima tiklanmalidir")
     public void ilanlarimaTiklanmalidir() {
-        myTourRequestsPage.myAdverts.click();
+        myTourRequestsPage.myTourRequests.click();
+       // dashboardPage.tourRequests.click();
+        ReusableMethods.waitForSecond(2);
+        myTourRequestsPage.myResponses1.click();
     }
 
     @Then("ilanlarim listesindeki isim,durum,tur tarihi ,saat goruntulenebiliyor mu  kontrol edilir.")
     public void ilanlarimListesindekiIsimDurumTurTarihiSaatGoruntulenebiliyorMuKontrolEdilir() {
-        Assert.assertTrue(myTourRequestsPage.myAdvertsPage.isDisplayed());
+        Assert.assertTrue(myTourRequestsPage.statusResponses.isDisplayed());
     }
 //13-tc02
     @And("Tur Taleplerime tiklamalidir")
@@ -52,34 +50,39 @@ public class US13_US14StepDefs {
 
     @And("Tur Cevaplarim listesi goruntulenir.")
     public void turCevaplarimListesiGoruntulenir() {
-        myTourRequestsPage.myResponses.click();
+        myTourRequestsPage.myResponses1.click();
     }
 
     @And("onaylanma kismina tiklanir")
     public void onaylanmaKisminaTiklanir() {
-        myTourRequestsPage.approveAction.click();
+        myTourRequestsPage.myAction.click();
     }
 
     @And("cikan sekmedeki evet kutusuna tiklanir")
     public void cikanSekmedekiEvetKutusunaTiklanir() {
-        myTourRequestsPage.popupActionYes.click();
+        myTourRequestsPage.myActionYes.click();
     }
 
     @Then("onaylandigina dair yazi kontrol edilir.")
     public void onaylandiginaDairYaziKontrolEdilir() {
-        Assert.assertTrue(myTourRequestsPage.tourRequestCreatedSuccessfully.isDisplayed());
+        ReusableMethods.waitForSecond(2);
+        Assert.assertTrue(myTourRequestsPage.myActionSuccessfully.isDisplayed());
         //burayi tekrar incele
     }
 //tc03
     @And("reddetme kismina tiklanir")
-    public void reddetmeKisminaTiklanir() {
+    public void reddetmeKisminaTiklanir() { myTourRequestsPage.myActiondeleteOnay.click();
     }
 
     @And("cikan reddetme kutusuna yes'e tiklanir")
     public void cikanReddetmeKutusunaYesETiklanir() {
+
+        myTourRequestsPage.myActionCancelYes.click();
     }
 
     @Then("reddedildigine dair yazi kontrol edilir.")
     public void reddedildigineDairYaziKontrolEdilir() {
+        ReusableMethods.waitForSecond(2);
+        Assert.assertTrue(myTourRequestsPage.myActionCancelYesMesaj.isDisplayed());
     }
 }
