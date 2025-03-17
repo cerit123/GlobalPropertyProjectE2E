@@ -14,12 +14,22 @@ import org.junit.runner.RunWith;
         },
                 features = "src/test/resources/features",
 
+
         glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
 
 
-        tags = "@US-04",
+        },
+        features = "src/test/resources/features",
 
-        dryRun = true
+        glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
+
+
+
+        tags = "@US21",
+
+
+
+        dryRun = false
 
 
 )

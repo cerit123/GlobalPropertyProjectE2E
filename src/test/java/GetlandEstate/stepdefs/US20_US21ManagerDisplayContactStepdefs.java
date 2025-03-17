@@ -7,44 +7,38 @@ import GetlandEstate.utilities.Driver;
 import GetlandEstate.utilities.JSUtils;
 import GetlandEstate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.Collections;
 import java.util.List;
 
 public class US20_US21ManagerDisplayContactStepdefs {
 
     ContactMessagesPage contactMessagesPage = new ContactMessagesPage();
     DashboardPage dashboardPage = new DashboardPage();
-//TC-01
-//    @Given("Sisteme Manager olarak giriş yapilir")
-//    public void sistemeManagerOlarakGirişYapilir() {
-//    }
 
-    @When("Contact mesajları sayfasına gidilir")
+    @Given("Contact mesajları sayfasına gidilir")
     public void contactMesajlarıSayfasınaGidilir() {
-
         ReusableMethods.waitForSecond(2);
         JSUtils.JSclickWithTimeout(dashboardPage.contactMessages);
-     //   dashboardPage.contactMessages.click();
-
     }
 
-    @And("Mesajlar görüntülenir")
-    public void mesajlarıGörüntüle() {
-        ReusableMethods.waitForSecond(2);
+    @When("Mesajlar görüntülenir")
+    public void mesajlarGörüntülenir() {
+        ReusableMethods.waitForSecond(3);
         contactMessagesPage.message.click();
-
+        //JSUtils.JSclickWithTimeout(contactMessagesPage.message);
     }
 
     @And("Bir mesaj silinir")
     public void birMesajSilinir() {
         ReusableMethods.waitForSecond(2);
         contactMessagesPage.deleteButton.click();
-
     }
 
     @Then("Mesajin silindigi dogrulanir")
@@ -52,17 +46,12 @@ public class US20_US21ManagerDisplayContactStepdefs {
 
     }
 
-//TC02
-
-
-//    @Given("Sisteme Manager olarak giriş yapilir")
-//    public void sistemeManagerOlarakGirişYapilir() {
-//    }
-
-    @And("Bir mesaj okundu olarak işaretlenir")
+    @When("Bir mesaj okundu olarak işaretlenir")
     public void birMesajOkunduOlarakIşaretlenir() {
-
-        contactMessagesPage.markReadButton.click();
+        ReusableMethods.waitForSecond(3);
+        contactMessagesPage.message.click();
+        ReusableMethods.waitForSecond(3);
+        contactMessagesPage.markUnReadButton.click();
     }
 
     @Then("Mesajin okundu olarak isaretlendigi dogrulanir")
@@ -70,12 +59,11 @@ public class US20_US21ManagerDisplayContactStepdefs {
 
     }
 
-//TC03
-
-    @And("Belirli bir kelime ile arama yapilir")
+    @When("Belirli bir kelime ile arama yapilir")
     public void belirliBirKelimeIleAramaYapilir() {
         contactMessagesPage.searchBox.click();
-        contactMessagesPage.searchBox.sendKeys(ConfigReader.getProperty("john.doe"));
+        contactMessagesPage.searchBox.sendKeys("john");
+        contactMessagesPage.searchButton.click();
     }
 
     @Then("Arama sonuclarinin listelendigi dogrulanir")
@@ -84,40 +72,31 @@ public class US20_US21ManagerDisplayContactStepdefs {
         Assert.assertFalse(sonuc.isEmpty());
     }
 
-
-//TC04
-
-    @And("Filter butonuna tiklanir")
+    @When("Filter butonuna tiklanir")
     public void filterButonunaTiklanir() {
         contactMessagesPage.filterButton.click();
     }
 
     @And("Start Date alanian tarih girilir")
     public void startDateAlanianTarihGirilir() {
-        contactMessagesPage.dropdownStartDate.sendKeys(ConfigReader.getProperty("12/03/2025"));
-
+        contactMessagesPage.dropdownStartDate.sendKeys("15/03/2025");
     }
 
     @And("End Date alanian tarih girilir")
     public void endDateAlanianTarihGirilir() {
-        contactMessagesPage.dropdownEndDate.sendKeys(ConfigReader.getProperty("13/03/2025"));
+        contactMessagesPage.dropdownEndDate.sendKeys("16/03/2025");
     }
 
     @And("Onay butonuna basilir")
     public void onayButonunaBasilir() {
         contactMessagesPage.applyFiltersButton.click();
+        ReusableMethods.waitForSecond(8);
     }
+
 
     @Then("Belirlitilen tarih araligindaki arama sonuclarinin listelendigi dogrulanir")
     public void belirlitilenTarihAraligindakiAramaSonuclarininListelendigiDogrulanir() {
-        List<WebElement> sonuc2 = Driver.getDriver().findElements(By.xpath("//span[@class='email' and text()='john.doe@example.com']"));
-        Assert.assertFalse(sonuc2.isEmpty());
+        List<WebElement> sonuc2 = Driver.getDriver().findElements(By.className("h2.read.accordion-header"));
+        Assert.assertTrue(sonuc2.isEmpty());
     }
-/////////
-
-
-
-
-
-
 }

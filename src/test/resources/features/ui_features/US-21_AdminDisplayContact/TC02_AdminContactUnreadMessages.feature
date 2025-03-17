@@ -1,10 +1,9 @@
-@US20 @UI @E2E @Admin
-Feature:
+@US21 @UI @E2E @Admin
+Feature: Admin marks contact messages as read
 
   Scenario: Admin Contact mesajları okundu olarak isaretleyebilmelidir
 
-    Given Sisteme Admin olarak giriş yapilir
-    When Contact mesajları sayfasına gidilir
-    And Bir mesaj okundu olarak işaretlenir
+    Given Contact mesajları sayfasına gidilir
+    When Bir mesaj okundu olarak işaretlenir
     Then Mesajin okundu olarak isaretlendigi dogrulanir
 

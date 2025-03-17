@@ -75,4 +75,5 @@ public class AdminManagerRaporPage {
     @FindBy(xpath = "//span[text()='Logout']")
     public WebElement logout;
 
+
 }
