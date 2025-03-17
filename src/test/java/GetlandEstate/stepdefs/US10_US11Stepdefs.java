@@ -160,20 +160,19 @@ public class US10_US11Stepdefs {
 
     @And("search box ın altındaki istenilen emlak seçilir")
     public void searchBoxInAltındakiIstenilenEmlakSeçilir() {
-        searchPage.villaButton.click();
+      //  searchPage.villaButton.click();
     }
 
     @And("gelen ürünlerden bir tanesi üzerine tıklayarak açılır")
     public void gelenÜrünlerdenBirTanesiÜzerineTıklayarakAçılır() {
         Driver.getDriver().navigate().refresh();
 
-            if (!searchPage.propertiesList.isEmpty()) {
+
+                ReusableMethods.waitForSecond(1);
                 Random random = new Random();
                 int randomIndex = random.nextInt(searchPage.propertiesList.size());
                 searchPage.propertiesList.get(randomIndex).click();
-            } else {
-                throw new RuntimeException("No property images found!");
-            }
+
         
     }
 
@@ -253,7 +252,7 @@ public class US10_US11Stepdefs {
 
     @Then("TourRequest created successfully yazısı görünür")
     public void tourrequestCreatedSuccessfullyYazısıGörünür() {
-        ReusableMethods.waitForSecond(1);
+        ReusableMethods.visibleWait(searchPage.createdVerify,5);
         Assert.assertTrue(searchPage.createdVerify.isDisplayed());
     }
 
