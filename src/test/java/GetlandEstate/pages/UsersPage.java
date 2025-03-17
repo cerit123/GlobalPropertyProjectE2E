@@ -68,11 +68,25 @@ public class UsersPage {
     @FindBy(xpath = "//button[@type='button'][1]")
     public WebElement backButton;
 
+
+    @FindBy(xpath = "//input[@name='search']")
+    public WebElement searchTitle;
+
+    @FindBy(xpath = "//*[@id='root']/div[1]/div[2]/div[2]/div/div[1]/div/button")
+    public WebElement searchButton;
+
+    @FindBy (xpath = "//*[@id=\"root\"]/div[2]/div/div/div/div[1]")
+    public WebElement basariMesaji;
+
+    @FindBy (xpath = "//tbody//button[2]//*[name()='svg']")
+    public WebElement arananKullanıcınınEditi;
+
     @FindBy(xpath = "(//span[text()='Name'])[2]")
     public WebElement usersName;
 
     @FindBy(xpath = "//div[@class='p-toast-detail']")
     public WebElement userCanNotUpdate;
+
 
 
 
