@@ -17,9 +17,14 @@ import org.junit.runner.RunWith;
 
         glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
 
+
         tags = "@US21",
 
+        tags = "@US-14",
+
+
         dryRun = false
+
 )
 public class Runner {
 }

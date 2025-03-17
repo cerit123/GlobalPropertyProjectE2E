@@ -68,5 +68,13 @@ public class UsersPage {
     @FindBy(xpath = "//button[@type='button'][1]")
     public WebElement backButton;
 
+    @FindBy(xpath = "(//span[text()='Name'])[2]")
+    public WebElement usersName;
+
+    @FindBy(xpath = "//div[@class='p-toast-detail']")
+    public WebElement userCanNotUpdate;
+
+
+
 
 }
