@@ -10,11 +10,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.Select;
 
 public class TC05CustomerStepdefs {
     LoginPage loginPage = new LoginPage();
     UsersPage userpage = new UsersPage();
     AdminManagerRaporPage admin = new AdminManagerRaporPage();
+    Select rolesSelect;
 
     @When("Login sekmesine tiklanir")
     public void loginSekmesineTiklanir() {
@@ -54,7 +56,7 @@ public class TC05CustomerStepdefs {
     @Then("Oluşturulan kullanıcı bilgileri görülebilmeli")
     public void oluşturulanKullanıcıBilgileriGörülebilmeli() {
 
-        //Assert.assertTrue(userpage..isDisplayed());
+        Assert.assertTrue(userpage.usersName.isDisplayed());
 
     }
 
@@ -76,23 +78,27 @@ public class TC05CustomerStepdefs {
 
     @And("Günceleme sekmesine tıklanılır")
     public void güncelemeSekmesineTıklanılır() {
+        userpage.actionUpdate.click();
+        userpage.usersEditFirstName.sendKeys("ilos");
+        userpage.updateButton.click();
     }
 
     @Then("Günceleme yapıldığı doğrulanır.")
     public void güncelemeYapıldığıDoğrulanır() {
+        Assert.assertTrue(userpage.usersName.getText().contains("ilos"));
     }
 
     // TC_05 ---------
     @And("Delete sekmesine tıklanılır")
     public void deleteSekmesineTıklanılır() {
-
+        userpage.actionUpdate.click();
         userpage.deleteButton.click();
     }
 
     @Then("Oluşturulan kullanıcı silinebilir olmalı")
     public void oluşturulanKullanıcıSilinebilirOlmalı() {
 
-        //Assert.assertTrue(userpage..isDisplayed());
+        Assert.assertTrue(userpage.errorAlert.isDisplayed());
 
     }
 
@@ -101,11 +107,16 @@ public class TC05CustomerStepdefs {
     public void adminRoluAtamayaIzinVermiyor() throws Throwable {
 
         userpage.rolesAdmin.click();
+        rolesSelect = new Select(userpage.rolesAdmin);
+        rolesSelect.selectByVisibleText("Admin");
+
+        Assert.assertTrue(rolesSelect.getFirstSelectedOption().getText().equals("Admin"));
 
         // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
     }
      // TC_07 -------
     @Then("\"Manager rolu atamaya izin vermiyor")
-    public void managerRoluAtamayaIzinVermiyor() throws Throwable {    // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
+    public void managerRoluAtamayaIzinVermiyor() throws Throwable {
+        Assert.assertTrue(userpage.userCanNotUpdate.isDisplayed());// Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
     }
 }
