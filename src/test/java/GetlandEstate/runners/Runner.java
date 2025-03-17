@@ -11,6 +11,12 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
 
+        },
+                features = "src/test/resources/features",
+
+
+        glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
+
 
         },
         features = "src/test/resources/features",
@@ -18,11 +24,13 @@ import org.junit.runner.RunWith;
         glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
 
 
+
         tags = "@US21",
 
 
 
         dryRun = false
+
 
 )
 public class Runner {

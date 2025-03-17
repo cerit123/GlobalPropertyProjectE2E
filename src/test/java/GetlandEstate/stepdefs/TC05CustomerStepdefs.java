@@ -114,7 +114,7 @@ public class TC05CustomerStepdefs {
 
         // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
     }
-     // TC_07 -------
+    // TC_07 -------
     @Then("\"Manager rolu atamaya izin vermiyor")
     public void managerRoluAtamayaIzinVermiyor() throws Throwable {
         Assert.assertTrue(userpage.userCanNotUpdate.isDisplayed());// Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
