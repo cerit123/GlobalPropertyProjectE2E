@@ -1,5 +1,5 @@
-@US-15@UI
-
+@US-15iki@UI
+@Admin
 Feature: Admin İlan Türü Yönetimi Test
 
   Scenario: Admin yeni bir ilan türü ekler

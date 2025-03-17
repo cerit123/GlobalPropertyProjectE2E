@@ -37,31 +37,40 @@ public class AdminManagerRaporPage {
     @FindBy(id = "role")
     public WebElement role;
 
-    @FindBy(id = "startDate")
+    @FindBy(xpath = "(//input[@id='startDate'])[2]")
     public WebElement startDateTur;
 
-    @FindBy(id = "endDate")
+    @FindBy(xpath = "(//input[@id='endDate'])[2]")
     public WebElement endDateTur;
 
-    @FindBy(id = "status")
+    @FindBy(xpath = "(//select[@id='status'])[2]")
     public WebElement statusTur;
 
     //tum raporlama icin bu buton kullanilacak
     @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
-    public WebElement reportButton;
+    public WebElement reportButton1;
+    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
+    public WebElement reportButton2;
+    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
+    public WebElement reportButton3;
+    @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[1]")
+    public WebElement reportButton4;
 
     //raporlama yaptiktan sonra bu mesaj gorunur olacak
     @FindBy(xpath = "//div[text()='Full authentication is required to access this resource']")
     public WebElement reportVerfy;
 
 
-    @FindBy(xpath = "//div[text()='Rapor başarıyla Excel dosyasına aktarıldı']")
-    public WebElement raporExcel;
+   @FindBy(xpath = "//span[text()='Success']")
+   public WebElement raporExcel;
+//    @FindBy(xpath = "//div[contains(text(), 'Report successfully')]")
+//    public WebElement raporExcel;
 
     @FindBy(xpath = "//div[text()='There is no data to export to Excel. Data list empty]")
     public WebElement raporExcelEmpyt;
 
 //    @FindBy(id = "status")
 //    public WebElement statusTur;
+
 
 }

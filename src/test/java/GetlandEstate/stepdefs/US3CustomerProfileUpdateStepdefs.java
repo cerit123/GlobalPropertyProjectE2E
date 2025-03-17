@@ -6,10 +6,15 @@ import io.cucumber.java.en.Then;
 public class US3CustomerProfileUpdateStepdefs {
     @And("Profil butonuna tiklanir")
     public void profilButonunaTiklanir() {
+
+    //profilBilgilerininDegistirildigiDogrulanir();
+    //profilBilgilerininDegistirildigiDogrulanir();
+
     }
 
     @And("My Profile sekmesine tiklanir")
     public void myProfileSekmesineTiklanir() {
+        //profilBilgilerininDegistirildigiDogrulanir();
     }
 
     @And("First name\\/Last name\\/ Phone\\/ email guncellenir")
@@ -84,5 +89,21 @@ public class US3CustomerProfileUpdateStepdefs {
 
     @Then("Hesabin silindigi dogrulanir")
     public void hesabinSilindigiDogrulanir() {
+    }
+
+    @And("First name guncellenir")
+    public void firstNameGuncellenir() {
+    }
+
+    @And("Last name guncellenir")
+    public void lastNameGuncellenir() {
+    }
+
+    @And("Phone guncellenir")
+    public void phoneGuncellenir() {
+    }
+
+    @And("Email guncellenir")
+    public void emailGuncellenir() {
     }
 }

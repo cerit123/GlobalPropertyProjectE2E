@@ -1,4 +1,5 @@
-@US-15@UI
+@US-15yedi@UI
+@Admin
 Feature: Admin Tur Taleplerini Görüntüleme
 
   Scenario: Admin tur taleplerini görüntüler

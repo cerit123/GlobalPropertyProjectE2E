@@ -1,4 +1,5 @@
-@US-15@UI
+@US-15bes@UI
+@Admin
 Feature: Admin Kullanıcı Rol Yönetimi
 
   Scenario: Admin kullanıcıya farklı bir rol atar

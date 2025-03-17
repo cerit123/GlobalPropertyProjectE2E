@@ -1,4 +1,6 @@
-@US-15-UI
+@US-15four-UI
+@Admin
+
 Feature: Admin Kullanıcı Güncelleme
 
   Scenario: Admin kullanıcı bilgilerini günceller

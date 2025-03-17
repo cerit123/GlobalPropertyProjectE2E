@@ -1,5 +1,5 @@
-@US-15@UI
-
+@US-15üc@UI
+@Admin
 Feature: Admin Kullanıcı Arama
 
   Scenario: Admin kullanıcı arar

@@ -1,4 +1,5 @@
-@US-15@UI
+@US-15altı@UI
+@Admin
 Feature: Admin Kategori Yönetimi
 
   Scenario: Admin kategori bilgilerini günceller

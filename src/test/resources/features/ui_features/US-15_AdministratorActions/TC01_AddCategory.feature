@@ -1,6 +1,6 @@
 
-@US-15@UI
-
+@US-15bir@UI
+@Admin
 Feature: US-15_Administrator Actions test
 
 
