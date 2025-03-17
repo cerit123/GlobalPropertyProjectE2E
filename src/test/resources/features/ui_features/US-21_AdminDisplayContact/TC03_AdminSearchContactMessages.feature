@@ -1,5 +1,5 @@
 @US21 @UI @E2E @Admin
-Feature:
+Feature: Admin searches contact messages with specific word
 
   Scenario: Admin belirli bir kelime ile contact mesaji aratabilmeli
 

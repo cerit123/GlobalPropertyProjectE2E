@@ -1,5 +1,5 @@
 @US21 @UI @E2E @Admin
-Feature:
+Feature: Admin deletes contact messages
 
   Scenario: Admin Contact mesajları görebilmeli ve silebilmelidir
 

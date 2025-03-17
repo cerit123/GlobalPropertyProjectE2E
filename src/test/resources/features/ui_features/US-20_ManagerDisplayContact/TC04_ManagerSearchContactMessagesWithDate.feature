@@ -1,5 +1,5 @@
-@US70 @Manager @UI @E2E
-Feature:
+@US20 @Manager @UI @E2E
+Feature: Manager search within read and unread messages by giving a date range
 
   Scenario: Manager Okunan ve okunmayan mesajlar içerisinde tarih aralığı vererek arama yapabilmeli
 

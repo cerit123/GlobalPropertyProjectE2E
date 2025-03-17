@@ -1,5 +1,5 @@
 @US21 @UI @E2E @Admin
-Feature:
+Feature: Admin marks contact messages as read
 
   Scenario: Admin Contact mesajları okundu olarak isaretleyebilmelidir
 
