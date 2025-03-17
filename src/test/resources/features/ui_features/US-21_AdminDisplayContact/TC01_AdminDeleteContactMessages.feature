@@ -1,4 +1,4 @@
-@US20 @UI @E2E
+@US20 @UI @E2E @Admin
 Feature:
 
   Scenario: Admin Contact mesajları görebilmeli ve silebilmelidir

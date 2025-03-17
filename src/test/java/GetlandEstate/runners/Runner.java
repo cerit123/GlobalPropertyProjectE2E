@@ -1,5 +1,4 @@
 package GetlandEstate.runners;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -10,13 +9,18 @@ import org.junit.runner.RunWith;
                 "pretty",//konsol da scenariolar ile ilgili ayrintili bilgi verir
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"
+                "junit:target/xml-report/cucumber.xml",
+
+
         },
         features = "src/test/resources/features",
-        glue = {"GetlandEstate/stepdefs", "GetlandEstate/hooks"},
-        tags = "@US01",
+
+        glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
+
+        tags = "@US-11",
+
         dryRun = false
+
 )
 public class Runner {
-
 }
