@@ -28,7 +28,7 @@ public class ContactPage {
   @FindBy(css = "button[type='submit']")
     public WebElement sendButton;
 
-  @FindBy(xpath = "//div[text()='Mesaj başarıyla gönderildi.']")
+  @FindBy(xpath = "//div[text()='Contact message saved successfully.']")
     public WebElement successMassage;
 
 

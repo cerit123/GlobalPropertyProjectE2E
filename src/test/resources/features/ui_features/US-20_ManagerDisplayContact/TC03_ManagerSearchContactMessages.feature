@@ -1,9 +1,9 @@
-@US20 @UI @E2E
+@US20 @Manager @UI @E2E
 Feature:
 
   Scenario: Manager belirli bir kelime ile contact mesaji aratabilmeli
 
-    Given Sisteme Manager olarak giriş yapilir
+    Given Manager olarak giris yapilir
     When Contact mesajları sayfasına gidilir
     And Belirli bir kelime ile arama yapilir
     Then Arama sonuclarinin listelendigi dogrulanir

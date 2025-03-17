@@ -29,6 +29,9 @@ public class MyTourRequestsPage {
     @FindBy(xpath = "(//span[text()='Owner'])[1]")
     public WebElement owner;
 
+    @FindBy(xpath = "(//span[text()='Guest'])[1]")
+    public WebElement guest;
+
     @FindBy(xpath = "(//span[text()='Status'])[1]")
     public WebElement statusRequests;
 
@@ -55,16 +58,16 @@ public class MyTourRequestsPage {
     @FindBy(xpath = "(//button[@class='btn-link btn btn-primary'])[2]")
     public WebElement actionUpdateButton;
 
-    @FindBy(xpath = "(//button[@class='btn-link btn btn-primary'])[2]")
+    @FindBy(id = "tourDate")
     public WebElement tourDateChoose;
 
     @FindBy(id = "tourTime")
-    public WebElement timeBooking;
+    public WebElement tourTimeChoose;
 
 
 
     @FindBy(xpath = "(//button[@class='btn-link btn btn-primary'])[2]")
-    public WebElement tourTimeChoose;
+    public WebElement baskabisey;
 
     @FindBy(xpath = "//button[text()='BACK']")
     public WebElement backChoose;
@@ -87,15 +90,35 @@ public class MyTourRequestsPage {
     @FindBy(xpath = "//span[text()='No']")
     public WebElement popupActionNo;
 
-    @FindBy(xpath = "//div[text()='TourRequest created successfully']")
+
+    @FindBy(xpath = "//span[text()='Created']")
     public WebElement tourRequestCreatedSuccessfully;
 
+    @FindBy(xpath = "//span[text()='Tour request declined']")
+    public WebElement tourRequestDecline;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement tourRequestSubmitButton;
+
+    @FindBy(xpath = "//div[@class=' row-cols-1 row-cols-sm-2 row-cols-lg-3 row']//div[1]//div[1]//a[1]")
+    public WebElement houseButton;
+
+    @FindBy(xpath = "(//span[text()='PENDING'])[1]")
+    public WebElement pendingStatus;
 
 
 
 
 
 
+
+    @FindBy(xpath = "//span[normalize-space()='My Adverts']")
+    public WebElement myAdverts;
+
+
+
+    @FindBy(xpath = "//h1[normalize-space()='MY ADVERTS']")
+    public WebElement myAdvertsPage;
 
 
 
