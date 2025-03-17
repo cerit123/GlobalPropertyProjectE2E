@@ -8,5 +8,4 @@ Feature:   Users Contact Message Send
     And   Acilan pencereye gecerli bir last name girilir
     And   Gecerli bir email adresi girilir
     And   Acilan pencereye bos mesaj girilir
-
-    Then  Mesajin gonderilmedigi dogrulanir
+    Then  Send butonuna tiklanmadigi dogrulanir

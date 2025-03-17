@@ -90,15 +90,23 @@ public class US19CustomerSendMesageStepdefs {
     @And("Gecersiz bir email adresi noktasiz girilir")
     public void gecersizBirEmailAdresiNoktasizGirilir() {
         contactPage.eMailBox.sendKeys("abc@abccom");
+
+    }
+    @Then("Send butonuna tiklanmadigi dogrulanir")
+    public void sendButonunaTiklanmadigiDogrulanir() {
+        Assert.assertFalse(contactPage.sendButton.isEnabled());
     }
 
     @And("Acilan pencereye bos mesaj girilir")
     public void acilanPencereyeBosMesajGirilir() {
         contactPage.massageBox.sendKeys("");
+
     }
 
     @And("Gecersiz bir email adresi @ isareti olmadan girilir")
     public void gecersizBirEmailAdresiIsaretiOlmadanGirilir() {
         contactPage.eMailBox.sendKeys("abc@abccom");
     }
+
+
 }

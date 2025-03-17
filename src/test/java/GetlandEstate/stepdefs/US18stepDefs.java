@@ -105,12 +105,14 @@ public class US18stepDefs {
     @And("Profil menusunden  My Tour Requests sekmesi tiklanir")
     public void profilMenusundenMyTourRequestsSekmesiTiklanir() {
     homePage.profilButton.click();
+    ReusableMethods.waitForSecond(2);
     dashboardPage.tourRequests.click();
 
 }
 
     @And("My Responses listesi acilir.")
     public void myResponsesListesiAcilir() {
+        ReusableMethods.waitForSecond(2);
         myTourRequestsPage.myResponses.click();
     }
 

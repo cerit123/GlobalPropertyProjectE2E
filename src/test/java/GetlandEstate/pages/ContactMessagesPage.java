@@ -3,7 +3,8 @@ package GetlandEstate.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ContactMessages {
+public class ContactMessagesPage {
+
     @FindBy(xpath = "//input[@name='search']")
     public WebElement searchBox;
 
