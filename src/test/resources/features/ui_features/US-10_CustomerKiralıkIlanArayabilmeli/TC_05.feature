@@ -4,8 +4,6 @@ Feature:
   Scenario:Price Range max box ına min değerinden küçük  değer girldiğinde hata mesajı vemeli (negative)
 
     Given  search box ın üzerindeki sale butonuna tıklanır
-    Given  search box ın üzerindeki rent butonuna tıklanır
-
     And    search butonuna tıklanır
     And    açılan sol pencerede Price Range bölümünde min kutusuna bir değer girilir
     And    açılan sol pencerede Price Range bölümünde max kutusuna miinimum değerden küçük bir değer girilir
