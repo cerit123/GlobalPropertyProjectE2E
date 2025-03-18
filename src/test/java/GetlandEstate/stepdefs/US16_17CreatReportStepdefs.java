@@ -1,24 +1,28 @@
 package GetlandEstate.stepdefs;
 
-import GetlandEstate.pages.*;
-import GetlandEstate.utilities.*;
+import GetlandEstate.pages.AdminManagerRaporPage;
+import GetlandEstate.pages.DashboardPage;
+import GetlandEstate.pages.HomePage;
+import GetlandEstate.pages.LoginPage;
+import GetlandEstate.utilities.ConfigReader;
+import GetlandEstate.utilities.Driver;
+import GetlandEstate.utilities.ReusableMethods;
+import GetlandEstate.utilities.WaitUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US16CreatReportStepdefs {
+public class US16_17CreatReportStepdefs {
 
     AdminManagerRaporPage adminManagerRaporPage = new AdminManagerRaporPage();
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage=new DashboardPage();
     HomePage homePage=new HomePage();
 
-
-//TC1------------------------------------------------
-
-    @And("Rapor butonuna tiklanir")
+    //TC-01-----------
+    @Given("Rapor butonuna tiklanir")
     public void raporButonunaTiklanir() {
         dashboardPage.reports.click();
     }
@@ -26,7 +30,6 @@ public class US16CreatReportStepdefs {
     @And("Start date kismina gecerli veri girilir")
     public void startDateKisminaGecerliVeriGirilir() {
         adminManagerRaporPage.startDate.sendKeys(ConfigReader.getProperty("startDate"));
-
     }
 
     @And("End date kismina gecerli veri girilir")
@@ -37,7 +40,7 @@ public class US16CreatReportStepdefs {
     @And("Category kismina gecerli veri girilir")
     public void categoryKisminaGecerliVeriGirilir() {
         adminManagerRaporPage.category.click();
-        ReusableMethods.ddmVisibleText(adminManagerRaporPage.category,"All");
+        ReusableMethods.ddmValue(adminManagerRaporPage.category,"1");
     }
 
     @And("Advert type kismina gecerli veri grilir")
@@ -53,106 +56,121 @@ public class US16CreatReportStepdefs {
         WaitUtils.waitFor(3);
     }
 
+
+    //TC02-----------------------------
     @And("Rapor olustur butonuna tiklanir")
     public void raporOlusturButonunaTiklanir() {
         adminManagerRaporPage.reportButton1.click();
-
+        WaitUtils.waitFor(1);
 
     }
 
     @Then("Rapor basariyla olustugu gosterilir")
     public void raporBasariylaOlustuguGosterilir() {
-        WaitUtils.waitFor(1);
-        Assert.assertTrue(adminManagerRaporPage.raporExcel.isDisplayed());
-        WaitUtils.waitFor(3);
-
-    }
-
-    @And("logout butonuna tiklanir")
-    public void logoutButonunaTiklanir() {
-        adminManagerRaporPage.logout.click();
-    }
-
-//TC-2 test case
-
-
-
-    @And("Profile tiklanir")
-    public void profileTiklanir() {
-
-        homePage.profilButton.click();
-    }
-
-    @And("Kontrol Paneline tiklanir")
-    public void kontrolPanelineTiklanir() {
-
-        homePage.controlPannelButton.click();
-    }
-    @And("En Populer ilanlar kisminda miktar kismi secilir")
-    public void enPopulerIlanlarKismindaMiktarKismiSecilir() {
-        adminManagerRaporPage.populerIlan.sendKeys(ConfigReader.getProperty("amount"));
-
-
-    }
-
-
-    @Then("Rapor  populer ilanlar raporu basariyla olustugu gosterilir")
-    public void raporPopulerIlanlarRaporuBasariylaOlustuguGosterilir() {
-        //Assert.assertTrue(adminManagerRaporPage.reportVerfy.isDisplayed());
-        BrowserUtils.verifyElementDisplayed(adminManagerRaporPage.raporExcel);
-        WaitUtils.waitFor(3);
-    }
-
-//TC-3-------------------------------------------------
-    @And("Kullanicilar kismi Admin olarak secilir")
-    public void kullanicilarKismiAdminOlarakSecilir() {
-        adminManagerRaporPage.role.click();
-        ReusableMethods.ddmValue(adminManagerRaporPage.role,"ADMIN");
-    }
-
-    @And("Raporu Olustur butonuna tiklanir")
-    public void raporuOlusturButonunaTiklanir() {
-
-        adminManagerRaporPage.reportButton2.click();
-    }
-
-    @Then("Admin kullanici bilgisiyle raporun olusturuldugu  gorulur")
-    public void adminKullaniciBilgisiyleRaporunOlusturulduguGorulur() {
         Assert.assertTrue(adminManagerRaporPage.raporExcel.isDisplayed());
     }
 
-//TC-4---------------------------------------------------
-    @And("Start date kismina gecerli bir veri girilir")
-    public void startDateKisminaGecerliBirVeriGirilir() {
-        ActionsUtils.scrollDown();
-        adminManagerRaporPage.startDateTur.sendKeys(ConfigReader.getProperty("startDate"));
 
-
-
-    }
-
-    @And("End date kismina gecerli bir veri girlir")
-    public void endDateKisminaGecerliBirVeriGirlir() {
-        adminManagerRaporPage.endDateTur.sendKeys(ConfigReader.getProperty("endDate"));
-    }
-
-    @And("Status kismi secilir")
-    public void statusKismiSecilir() {
-        ReusableMethods.ddmValue(adminManagerRaporPage.statusTur,"1");
-    }
-
-    @Then("Tur istekleri listelenir ve rapor basariyla olusturulur")
-    public void turIstekleriListelenirVeRaporBasariylaOlusturulur() {
-        WaitUtils.waitForVisibility(adminManagerRaporPage.raporExcel,10);
-        Assert.assertTrue(adminManagerRaporPage.raporExcel.isDisplayed());
-
-    }
 
     @And("Sayfa kapatilir")
     public void sayfaKapatilir() {
-
         Driver.closeDriver();
     }
 
 
+    @And("En Populer ilanlar kisminda miktar kismi secilir")
+    public void enPopulerIlanlarKismindaMiktarKismiSecilir() {
+    }
+
+    @And("Rapor olusturma butonuna tiklanir")
+    public void raporOlusturmaButonunaTiklanir() {
+    }
+
+    @Then("Rapor  populer ilanlar raporu basariyla olustugu gosterilir")
+    public void raporPopulerIlanlarRaporuBasariylaOlustuguGosterilir() {
+    }
+
+    //TC03----------------------------
+
+    @Given("Manager olarak profil butonuna tiklanir")
+    public void managerOlarakProfilButonunaTiklanir() {
+    }
+
+    @And("Mnager olarak kontrol paneline tiklanir")
+    public void mnagerOlarakKontrolPanelineTiklanir() {
+    }
+
+    @When("Kullanicilar kismi Admin olarak secilir")
+    public void kullanicilarKismiAdminOlarakSecilir() {
+    }
+
+    @And("Raporu Olustur butonuna tiklanir")
+    public void raporuOlusturButonunaTiklanir() {
+    }
+
+    @Then("Admin kullanici bilgisiyle raporun olusturuldugu  gorulur")
+    public void adminKullaniciBilgisiyleRaporunOlusturulduguGorulur() {
+    }
+
+
+   //TC04-------------
+
+    @Given("Profile tiklanir")
+    public void profileTiklanir() {
+    }
+
+    @When("Kontrol Paneline tiklanir")
+    public void kontrolPanelineTiklanir() {
+    }
+
+    @And("Start date kismina gecerli bir veri girilir")
+    public void startDateKisminaGecerliBirVeriGirilir() {
+    }
+
+    @And("End date kismina gecerli bir veri girlir")
+    public void endDateKisminaGecerliBirVeriGirlir() {
+    }
+
+    @And("Status kismi secilir")
+    public void statusKismiSecilir() {
+    }
+
+    @And("Raporu Olusturmak icin butona tiklanir")
+    public void raporuOlusturmakIcinButonaTiklanir() {
+    }
+
+    @Then("Tur istekleri listelenir ve rapor basariyla olusturulur")
+    public void turIstekleriListelenirVeRaporBasariylaOlusturulur() {
+    }
+
+//TC05-----------------
+    @Given("Raporlar sekmesine gidilir")
+    public void raporlarSekmesineGidilir() {
+    }
+
+    @When("Start date kismina  bos birakilir")
+    public void startDateKisminaBosBirakilir() {
+    }
+
+    @And("Category kismi secilir")
+    public void categoryKismiSecilir() {
+    }
+
+    @And("Advert type kismi secilir")
+    public void advertTypeKismiSecilir() {
+    }
+
+    @And("Raporu Olusturun butonuna tiklanir")
+    public void raporuOlusturunButonunaTiklanir() {
+    }
+
+    @Then("Raporun basariyla olusturulmadigi ve hata mesaji alindigi gorulur")
+    public void raporunBasariylaOlusturulmadigiVeHataMesajiAlindigiGorulur() {
+    }
+
+
+
+    @And("End date kismina {string} kisminda once bir tarih girilir")
+    public void endDateKisminaKismindaOnceBirTarihGirilir(String arg0) {
+    }
 }

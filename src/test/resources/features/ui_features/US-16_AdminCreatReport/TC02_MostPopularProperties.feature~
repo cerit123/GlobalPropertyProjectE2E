@@ -5,8 +5,9 @@
 
       Given Rapor butonuna tiklanir
       And  En Populer ilanlar kisminda miktar kismi secilir
-      And Rapor olusturma butonuna tiklanir
+      And Rapor olustur butonuna tiklanir
       Then  Rapor  populer ilanlar raporu basariyla olustugu gosterilir
+      And logout butonuna tiklanir
       And Sayfa kapatilir
 
 

@@ -15,13 +15,6 @@ import org.junit.runner.RunWith;
                 features = "src/test/resources/features",
 
 
-        glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
-
-
-        },
-        features = "src/test/resources/features",
-
-        glue = {"GetlandEstate/stepdefs","GetlandEstate/hooks"},
 
 
 
