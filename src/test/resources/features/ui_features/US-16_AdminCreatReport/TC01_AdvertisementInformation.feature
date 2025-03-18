@@ -14,7 +14,6 @@ Feature:US-16_Admin Creat Report test
     And Status kismina gecerli veri girilir
     And Rapor olustur butonuna tiklanir
     Then Rapor basariyla olustugu gosterilir
-    And logout butonuna tiklanir
     And Sayfa kapatilir
 
 

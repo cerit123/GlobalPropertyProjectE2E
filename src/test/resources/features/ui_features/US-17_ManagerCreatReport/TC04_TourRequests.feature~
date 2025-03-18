@@ -10,7 +10,7 @@ Feature: US-17_ManagerCreatReport test
     And Manager olarak Start date kismina gecerli bir veri girilir
     And Manager olarak End date kismina gecerli bir veri girlir
     And Manager olarak Status kismi secilir
-    And Manager olarak Rapordort Olustur butonuna tiklanir
+    And Manager olarak Rapor4 Olustur butonuna tiklanir
     Then Manager olarak Tur istekleri listelenir ve rapor basariyla olusturulur
     And Sayfa kapatilir
 

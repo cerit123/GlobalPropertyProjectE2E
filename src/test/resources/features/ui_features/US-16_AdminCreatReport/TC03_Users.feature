@@ -1,4 +1,4 @@
-@US-16
+@US-1
   @Admin
 Feature:  US-16_AdminCreatReport test
 
@@ -9,7 +9,6 @@ Feature:  US-16_AdminCreatReport test
     When Kullanicilar kismi Admin olarak secilir
     And Raporu Olustur butonuna tiklanir
     Then Admin kullanici bilgisiyle raporun olusturuldugu  gorulur
-    And logout butonuna tiklanir
     And Sayfa kapatilir
 
 

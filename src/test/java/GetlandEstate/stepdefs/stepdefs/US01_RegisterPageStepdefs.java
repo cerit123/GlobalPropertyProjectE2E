@@ -1,19 +1,14 @@
-package GetlandEstate.stepdefs;
+package GetlandEstate.stepdefs.stepdefs;
 
 
 import GetlandEstate.pages.HomePage;
 import GetlandEstate.pages.RegistrationPage;
-import GetlandEstate.utilities.ActionsUtils;
 import GetlandEstate.utilities.WaitUtils;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.internal.common.assertion.Assertion;
-import org.apache.groovy.json.internal.Exceptions;
 import org.junit.Assert;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.ElementNotInteractableException;
 
 
 public class US01_RegisterPageStepdefs {
