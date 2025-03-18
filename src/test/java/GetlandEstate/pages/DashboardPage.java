@@ -15,7 +15,7 @@ public class DashboardPage {
 
 
     @FindBy(xpath = "//span[contains(text(), 'ContactMessages')]")
-    public WebElement ContactMessages;
+    public WebElement contactMessages;
 
 
     @FindBy(xpath = "//span[text()='Tour Requests']")
@@ -24,7 +24,11 @@ public class DashboardPage {
     @FindBy(xpath = "//span[normalize-space()='Back to Site']")
     public WebElement backToSite;
 
+    @FindBy(xpath = "//span[contains(text(),'Categories')]")
+    public WebElement categoryButton;
 
+    @FindBy(xpath = "//span[contains(text(),'Advert Types')]")
+    public WebElement advertTypes;
 
 
 }

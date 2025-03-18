@@ -1,10 +1,9 @@
-@US20 @UI @E2E
-Feature:
+@US20 @Manager @UI @E2E
+Feature: Manager searches contact messages with specific word
 
   Scenario: Manager belirli bir kelime ile contact mesaji aratabilmeli
 
-    Given Sisteme Manager olarak giriş yapilir
-    When Contact mesajları sayfasına gidilir
-    And Belirli bir kelime ile arama yapilir
+    Given Contact mesajları sayfasına gidilir
+    When Belirli bir kelime ile arama yapilir
     Then Arama sonuclarinin listelendigi dogrulanir
 

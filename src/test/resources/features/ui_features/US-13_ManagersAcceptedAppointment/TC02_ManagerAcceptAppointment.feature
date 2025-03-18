@@ -1,4 +1,4 @@
-
+@US-13 @Manager
 
 Feature:US-13_Manager Accept Appointment Test
 

@@ -6,6 +6,5 @@ Feature:US-13_Manager Accept Appointment Test
 
     Given siteye geri don kismina tiklamalidir
     When profile tiklamalidir
-    And Tur Taleplerime tiklamalidir
-    And Tur Cevaplarim kismi tiklanir.
-    Then Tur Cevaplarim listesindeki isim,durum,tur tarihi ,saat goruntulenebiliyor mu  kontrol edilir.
+    And ilanlarima tiklanmalidir
+    Then ilanlarim listesindeki isim,durum,tur tarihi ,saat goruntulenebiliyor mu  kontrol edilir.
